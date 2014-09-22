@@ -47,11 +47,13 @@ Replace that with correct path to the crypto_aead subdirectory. You may
 alternatively create a local crypto_aead subdirectory and copy only those
 ciphers that you are interested in there manually.
 
-Now check the compiler flags in brutus_cflags.cfg:
+Now check the compiler flags in `brutus_cflags.cfg`. If have an old compiler 
+or an otherwise exotic system, you may want to discard native optimizations and
+go with something geneneric like:
 ```
-$ cat brutus_cflags.cfg
--Wall -Ofast -march=native
+echo -n "-Wall -O3" > brutus_cflags.cfg 
 ```
+
 We are ready to compile the libraries and test framework. Just write:
 ```
 $ make
