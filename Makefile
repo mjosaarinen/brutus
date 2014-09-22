@@ -6,8 +6,7 @@ BIN		= brutus
 OBJS		= src/main.o src/util.o \
 		src/test_coherent.o src/test_speed.o
 
-CC		= gcc
-CFLAGS		= $(shell cat brutus_cflags.cfg)
+CC		= $(shell cat brutus_cc.cfg)
 LIBS		= -ldl -lm
 LDFLAGS		=
 INCS		= -Iinc
@@ -18,10 +17,10 @@ aeadlibs.txt:	crypto_aead
 		./mkaeadlibs.sh
 
 $(BIN):		$(OBJS)
-		$(CC) $(LDFLAGS) -o $(BIN) $(OBJS) $(LIBS)
+		$(CC) -o $(BIN) $(OBJS) $(LIBS)
 
 .c.o:
-		$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+		$(CC) $(INCS) -c $< -o $@
 
 clean:
 		rm -rf $(DIST)-*.txz $(OBJS) $(BIN) \

@@ -5,7 +5,7 @@
 
 CRYPTO_AEAD=crypto_aead
 AEADLIBS=aeadlibs
-BRUTUS_CFLAGS=`cat brutus_cflags.cfg`
+BRUTUS_CC=`cat brutus_cc.cfg`
 
 # cleanup
 rm -rf $AEADLIBS aeadlibs.txt 
@@ -22,7 +22,7 @@ ls -1 $CRYPTO_AEAD/*/*/encrypt.* | {
 		srcfiles=`ls -1 $srcdir/*.c $srcdir/*.cpp $srcdir/*.cc \
 			$srcdir/*.s $srcdir/*.S  2> /dev/null`
 		echo COMPILING $srcfiles
-		gcc $BRUTUS_CFLAGS -shared -fPIC -o $AEADLIBS/$aead.so \
+		$BRUTUS_CC -shared -fPIC -o $AEADLIBS/$aead.so \
 			-Iinc -I$srcdir -DBRUTUS_NAME='"'$aead'"' \
 			$srcfiles src/aead_params.c -lcrypto 2> $AEADLIBS/$aead.err
 		if [ -e $AEADLIBS/$aead.so ]
