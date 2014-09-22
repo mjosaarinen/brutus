@@ -39,16 +39,17 @@ writing can be download and extracted as:
 $ wget http://hyperelliptic.org/ebats/supercop-20140910.tar.bz2
 $ tar xfvj supercop-20140910.tar.bz2
 ```
-Don't compile or run SUPERCOP! Brutus just needs a symlink to the sources:
+Don't compile or run SUPERCOP! Brutus just needs a symlink to the 
+AEAD reference sources at `crypto_aead`. 
 ```
 $ cd brutus
 $ ln -s ../supercop-20140910/crypto_aead crypto_aead
 ```
-Replace that with correct path to the crypto_aead subdirectory. You may
-alternatively create a local crypto_aead subdirectory and copy only those
-ciphers that you are interested in there manually.
+Replace that with correct path to the real `crypto_aead` subdirectory. You can
+alternatively create a local `crypto_aead` subdirectory and manually copy some 
+subset of ciphers there.
 
-Now check the compiler flags in `brutus_cflags.cfg`. If have an old compiler 
+Now check the compiler flags in `brutus_cflags.cfg`. If you have an old compiler 
 or an otherwise exotic system, you may want to discard native optimizations and
 go with something geneneric like:
 ```
