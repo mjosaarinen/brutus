@@ -3,6 +3,7 @@
 
 // get the encryption parameters
 
+#include <string.h>
 #include "api.h"
 #include "openssl/aes.h"
 
