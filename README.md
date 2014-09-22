@@ -9,7 +9,7 @@ program then loads only those ciphers that you want to run on a particular
 test on. BRUTUS runs on most modern Linux systems, including better-equipped
 embedded systems. The codebase is fairly small, about 1000 lines total.
 
-The main advantage of BRUTUS over SUPERCOP is that it allows a rather rapid
+The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
 testing cycle. You can compile and run basic tests on all (nearly 200)
 candidate variants in just few minutes. You can also easily add your own
 statistical tests or test vector generation/verification code into the
