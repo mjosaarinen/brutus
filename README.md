@@ -39,7 +39,7 @@ writing can be download and extracted as:
 $ wget http://hyperelliptic.org/ebats/supercop-20140910.tar.bz2
 $ tar xfvj supercop-20140910.tar.bz2
 ```
-Don't to compile or run SUPERCOP! Brutus just needs a symlink to the sources:
+Don't compile or run SUPERCOP! Brutus just needs a symlink to the sources:
 ```
 $ cd brutus
 $ ln -s ../supercop-20140910/crypto_aead crypto_aead
