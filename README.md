@@ -30,7 +30,8 @@ $ sudo apt-get install libssl-dev
 ```
 Choose a working directory and cd there. Extract the Brutus package.
 ```
-$ tar xfvJ brutus-<version>.txz
+$ wget http://mjos.fi/dist/brutus-current.txz
+$ tar xfvJ brutus-current.txz
 ```
 You will need the SUPERCOP package. The latest version at the time of
 writing can be download and extracted as:
