@@ -86,7 +86,7 @@ int test_speed(caesar_t *aead, int fast)
 {
     uint64_t len;
 
-    if (brutus_verbatim) {
+    if (brutus_verbose) {
         printf("[%3s] Speed Test\n"
             "\tkey=%d\tnsec=%d\tnpub=%d\ta=%d\tolap=%d\n"
             "\tencrypt()=%p\tdecrypt()=%p\n",

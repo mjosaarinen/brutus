@@ -24,7 +24,7 @@ typedef struct {
 } caesar_t;
 
 // global flags
-extern int brutus_verbatim;
+extern int brutus_verbose;
 
 // util.c prototypes
 void rand_fill(void *p, int len);

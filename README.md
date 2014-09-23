@@ -83,7 +83,7 @@ We also have the `brutus` executable binary:
 ```
 $ ./brutus
 Usage: brutus [flags] aead1.so aead2.so ..
-   -q  Switch off verbatim.
+   -q  Switch off verbose.
    -c  Coherence test.
    -s  Encryption/Authentication Speed test.
    -f  Fast encryption throughput test.

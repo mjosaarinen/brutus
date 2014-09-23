@@ -11,7 +11,7 @@
 #include "brutus.h"
 
 // global flags
-int brutus_verbatim;
+int brutus_verbose;
 
 // main
 
@@ -25,13 +25,13 @@ int main(int argc, char **argv)
     // test modes
     flag_coherent = 0;
     flag_speed = 0;
-    brutus_verbatim = 1;
+    brutus_verbose = 1;
     flag_fast = 0;
 
     // dynamic parameters
     if (argc < 2) {
         fprintf(stderr, "Usage: brutus [flags] aead1.so aead2.so ..\n"
-                        "   -q  Switch off verbatim.\n"
+                        "   -q  Switch off verbose.\n"
                         "   -c  Coherence test.\n"
                         "   -s  Encryption/Authentication Speed test.\n"
                         "   -f  Fast encryption throughput test.\n");
@@ -65,7 +65,7 @@ int main(int argc, char **argv)
                     break;
 
                 case 'q':
-                    brutus_verbatim = 0;
+                    brutus_verbose = 0;
                     break;
 
                 default:

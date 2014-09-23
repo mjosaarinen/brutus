@@ -32,7 +32,7 @@ int test_coherent(caesar_t *aead)
         return -1;
     }
 
-    if (brutus_verbatim) {
+    if (brutus_verbose) {
         printf("[%3s] Coherence Check\n"
             "\tkey=%d\tnsec=%d\tnpub=%d\ta=%d\tolap=%d\n"
             "\tencrypt()=%p\tdecrypt()=%p\n",
@@ -50,7 +50,7 @@ int test_coherent(caesar_t *aead)
 
         // timeout after three seconds
         if (clock() - tim > 3 * CLOCKS_PER_SEC) {
-            if (brutus_verbatim) {
+            if (brutus_verbose) {
                 printf("!INFO\t%s timed out at iter=%d\n",
                     aead->name, iter);
             }
@@ -146,7 +146,7 @@ int test_coherent(caesar_t *aead)
             // decrypt
             ret = aead->decrypt(xt, &t, osec, ct, clen, ad, adlen, npub, key);
             if (ret == 0) {
-                if (brutus_verbatim) {
+                if (brutus_verbose) {
                     printf("!FORGE\t%s %s[%d] ^= 0x%02X "
                         "(iter=%d mlen=%llu clen=%llu)\n",
                         aead->name, fcase[forge], off, bit, iter, mlen, clen);
