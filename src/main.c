@@ -77,7 +77,7 @@ int main(int argc, char **argv)
 
                 case 'c':       // coherence
                     if (t <= 0)
-                        flag_coherence = 5;
+                        flag_coherence = 2;
                     else
                         flag_coherence = t;
                     break;

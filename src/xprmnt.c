@@ -29,7 +29,7 @@ int test_xprmnt(caesar_t *aead, int limit)
 
     if (brutus_verbose) {
         wtime = time(NULL);
-        printf("[%s] Correlation xprmnt (limit=%d) %s"
+        printf("[%s] Correlation xprmnt (limit=%d sec) %s"
             "\tkey=%d\tnsec=%d\tnpub=%d\ta=%d",
             aead->name, limit, ctime(&wtime),
             aead->keybytes, aead->nsecbytes,

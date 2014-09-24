@@ -92,7 +92,7 @@ int test_speed(caesar_t *aead, int limit)
     uint64_t len;
 
     if (brutus_verbose) {
-        printf("[%s] Speed Test (limit=%d)  "
+        printf("[%s] Speed Test (limit=%d sec)  "
             "key=%d  nsec=%d  npub=%d  a=%d\n",
             aead->name, limit, aead->keybytes, aead->nsecbytes,
             aead->npubbytes, aead->abytes);
@@ -112,7 +112,7 @@ int test_speed(caesar_t *aead, int limit)
 int test_throughput(caesar_t *aead, int limit)
 {
     if (brutus_verbose) {
-        printf("[%s] Throughput (limit=%ds)  "
+        printf("[%s] Throughput (limit=%ds sec)  "
             "key=%d  nsec=%d  npub=%d a=%d\n",
             aead->name, limit, aead->keybytes, aead->nsecbytes,
             aead->npubbytes, aead->abytes);

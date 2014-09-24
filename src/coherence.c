@@ -32,7 +32,7 @@ int test_coherence(caesar_t *aead, int limit)
     }
 
     if (brutus_verbose) {
-        printf("[%s] Coherence Check (limit=%d)  "
+        printf("[%s] Coherence Check (limit=%d sec)  "
             "key=%d  nsec=%d  npub=%d  a=%d\n",
             aead->name, limit, aead->keybytes, aead->nsecbytes,
             aead->npubbytes, aead->abytes);
