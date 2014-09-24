@@ -9,17 +9,15 @@ program then loads only those ciphers that you want to run on a particular
 test on. BRUTUS runs on most modern Linux systems, including better-equipped
 embedded systems. The codebase is fairly small, about 1000 lines total.
 
-After fixing bunch of memory leaks and other horrendous bugs in the
-implementations (you guys really should not do security work),
+After fixing a bunch of memory leaks and other horrendous bugs in the
+implementations (you guys really should not do ANY security work),
 the reference ciphers are now included with the BRUTUS package.
 
-The reference ciphers are now included with the package.
-
 The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
-testing cycle. You can compile and run basic tests on all (nearly 200)
-candidate variants in just few minutes. You can also easily add your own
-statistical tests or test vector generation/verification code into the
-framework.
+testing cycle. You can compile and run basic tests on nearly 200 candidate 
+variants in just few minutes (about 95% currently runnable). You can also 
+easily add your own statistical tests or test vector generation/verification 
+code into the framework.
 
 No warranty whatsoever. If you use this code in your project, attribute me.
 
@@ -28,8 +26,8 @@ Cheers,
 
 #Short Tutorial
 
-Brutus is written for a recent Linux system. In addition to compilers
-and gnumake you will need OpenSSL's `cryptolib` and headers installed as 
+Brutus is written for a recent-release Linux system. In addition to compilers
+and gnu make you will need OpenSSL's `cryptolib` and headers installed as 
 some candidates utilize AES. On debian/ubuntu:
 ```
 $ sudo apt-get install libssl-dev
