@@ -15,7 +15,7 @@ int run_speed(caesar_t *aead,
                 unsigned long long mlen, unsigned long long adlen,
                 clock_t limit)
 {
-    int ret, i;
+    int ret, i, sta, stb;
     unsigned long long clen, t, bytes;
     clock_t stim, etim;
     uint8_t key[80], nsec[64], osec[64], npub[64];
@@ -42,8 +42,10 @@ int run_speed(caesar_t *aead,
 
     stim = clock();
     bytes = 0;
+	sta = 1;
+	stb = 1;
     do {
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < sta; i++) {
             clen = 0;
             ret = aead->encrypt(ct, &clen, pt, mlen, ad, adlen,
                 nsec, npub, key);
@@ -53,7 +55,10 @@ int run_speed(caesar_t *aead,
                 return -1;
             }
         }
-        bytes += 100 * (mlen + adlen);
+        bytes += i * (mlen + adlen);
+		sta += stb;
+		stb = i;
+
         etim = clock() - stim;
     } while (etim < limit);
 
@@ -62,9 +67,12 @@ int run_speed(caesar_t *aead,
         aead->name, encspeed / 1000.0, mlen, adlen);
 
     stim = clock();
+
     bytes = 0;
+	sta = 1;
+	stb = 1;
     do {
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < sta; i++) {
             ret = aead->decrypt(pt, &t, osec, ct, clen, ad,
                 adlen, npub, key);
             if (ret != 0) {
@@ -73,7 +81,10 @@ int run_speed(caesar_t *aead,
                 return -2;
             }
         }
-        bytes += 100 * (mlen + adlen);
+        bytes += i * (mlen + adlen);
+		sta += stb;
+		stb = i;
+
         etim = clock() - stim;
     } while (etim < limit);
 
