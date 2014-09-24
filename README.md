@@ -78,6 +78,7 @@ $ ./brutus
 Usage: brutus [flags] aead1.so aead2.so ..
   -h   Quick help
   -q   Switch off verbose
+  -kN  Generate KAT for max length N
   -tN  Force exit after N seconds
   -rN  Use random seed N
   -cN  Coherence test (N sec timeout)
