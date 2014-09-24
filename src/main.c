@@ -14,7 +14,6 @@
 
 // global flags
 int brutus_verbose;
-<<<<<<< HEAD
 
 const char brutus_usage[] =
     "Usage: brutus [flags] aead1.so aead2.so ..\n"
@@ -26,8 +25,6 @@ const char brutus_usage[] =
     "  -sN  Encryption/Authentication Speed (N secs each)\n"
     "  -fN  Fast throughput test (N secs for enc/dec)\n";
 //  "  -xN  Correlation experiment with param N.\n";
-=======
->>>>>>> b82a6b2906f145c5255a2f65324c7972321a788d
 
 // main
 
@@ -42,25 +39,13 @@ int main(int argc, char **argv)
     brutus_verbose = 1;
     flag_coherence = 0;
     flag_speed = 0;
-<<<<<<< HEAD
-=======
-    brutus_verbose = 1;
->>>>>>> b82a6b2906f145c5255a2f65324c7972321a788d
     flag_fast = 0;
     flag_xprmt = 0;
     flag_timeout = 0;
 
     // no paramets
     if (argc < 2) {
-<<<<<<< HEAD
         fprintf(stderr, "%s", brutus_usage);
-=======
-        fprintf(stderr, "Usage: brutus [flags] aead1.so aead2.so ..\n"
-                        "   -q  Switch off verbose.\n"
-                        "   -c  Coherence test.\n"
-                        "   -s  Encryption/Authentication Speed test.\n"
-                        "   -f  Fast encryption throughput test.\n");
->>>>>>> b82a6b2906f145c5255a2f65324c7972321a788d
         return -1;
     }
 
@@ -92,7 +77,7 @@ int main(int argc, char **argv)
 
                 case 'c':       // coherence
                     if (t <= 0)
-                        flag_coherence = 1;
+                        flag_coherence = 5;
                     else
                         flag_coherence = t;
                     break;
@@ -134,16 +119,11 @@ int main(int argc, char **argv)
                     brutus_verbose = 0;
                     break;
 
-<<<<<<< HEAD
                 case 'x':       // experiment
                     if (t > 0)
                         flag_xprmt = t;
                     else
                         flag_xprmt = 10;
-=======
-                case 'q':
-                    brutus_verbose = 0;
->>>>>>> b82a6b2906f145c5255a2f65324c7972321a788d
                     break;
 
                 default:
