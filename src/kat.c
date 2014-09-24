@@ -42,6 +42,8 @@ void do_kat(caesar_t *aead, int mlen, int adlen)
         fprintf(stderr, "do_kat(): invalid parameters\n");
     }
 
+	// process the name
+
     memset(pt, 0x00, sizeof(pt));
     memset(ad, 0x00, sizeof(ad));
     memset(ct, 0x00, sizeof(ct));
