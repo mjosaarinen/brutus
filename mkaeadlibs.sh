@@ -11,14 +11,12 @@ BRUTUS_CC=`cat brutus_cc.cfg`
 rm -rf $AEADLIBS aeadlibs.txt 
 mkdir $AEADLIBS
 
-ls -1 $CRYPTO_AEAD/*/*/encrypt.* | {
-	read encrypt
-	while [ "$encrypt" != "" ]
+ls -1d $CRYPTO_AEAD/*/* | {
+	read srcdir
+	while [ "srcdir" != "" ]
 	do
-		srcdir=`dirname $encrypt`
 		aead=`echo $srcdir | sed 's@'$CRYPTO_AEAD'/@@g' | tr '/' '-'`
 		echo == $aead == 
-		srcfiles=$srcdir/encrypt.c
 		srcfiles=`ls -1 $srcdir/*.c $srcdir/*.cpp $srcdir/*.cc \
 			$srcdir/*.s $srcdir/*.S  2> /dev/null`
 		echo COMPILING $srcfiles
@@ -34,8 +32,8 @@ ls -1 $CRYPTO_AEAD/*/*/encrypt.* | {
 			wc $AEADLIBS/$aead.err
 		fi
 		echo
-	read encrypt
-done } | tee mkaeadlibs.log
+		read srcdir
+	done } | tee mkaeadlibs.log
 
 # create the list
 ls -1 $AEADLIBS/*.so > aeadlibs.txt
