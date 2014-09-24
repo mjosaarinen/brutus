@@ -33,7 +33,7 @@ uint32_t detseq32();
 void detseq_fill(void *p, int len);
 void hex_dump(void *p, int len);
 double plg2chi2(double chi2);
-int harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val);
+int test_harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val);
 
 // test modules
 int test_speed(caesar_t *aead, int limit);

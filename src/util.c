@@ -15,29 +15,29 @@
 
 uint32_t detseq_a = 0, detseq_b = 1;
 
-void detseq_seed(uint32_t seed) 
+void detseq_seed(uint32_t seed)
 {
-	detseq_a = 0xDEAD4BAD * seed;		// prime
-	detseq_b = 1;
+    detseq_a = 0xDEAD4BAD * seed;       // prime
+    detseq_b = 1;
 }
 
-uint32_t detseq32() 
+uint32_t detseq32()
 {
-	uint32_t t;
-	
-	t = detseq_a + detseq_b;
-	detseq_a = detseq_b;
-	detseq_b = t;
-	
-	return t;
+    uint32_t t;
+
+    t = detseq_a + detseq_b;
+    detseq_a = detseq_b;
+    detseq_b = t;
+
+    return t;
 }
 
 void detseq_fill(void *p, int len)
 {
-	int i;
-	
-	for (i = 0; i < len; i++) 
-		((uint8_t *) p)[i] = detseq32() >> 24;
+    int i;
+
+    for (i = 0; i < len; i++)
+        ((uint8_t *) p)[i] = detseq32() >> 24;
 }
 
 // utilities
@@ -74,29 +74,29 @@ void hex_dump(void *p, int len)
 
 // forking test harness (against cipher crashes & memory leaks)
 
-int harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val)
+int test_harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val)
 {
-	pid_t p;
-	int stat;
+    pid_t p;
+    int stat;
 
-	p = fork();
-	if (p == 0) {
-		exit(test_func(aead, val));
-	}
-	waitpid(p, &stat, 0);
-	fflush(stdout);
+    p = fork();
+    if (p == 0) {
+        exit(test_func(aead, val));
+    }
+    waitpid(p, &stat, 0);
+    fflush(stdout);
 
-	// normal exit ?
-	if (WIFEXITED(stat))
-		return WEXITSTATUS(stat);
+    // normal exit ?
+    if (WIFEXITED(stat))
+        return WEXITSTATUS(stat);
 
-	// something weird happened
-	if (WIFSIGNALED(stat))
-		fprintf(stderr, "\n[SIGNAL %d]\n", WTERMSIG(stat));
-	else
-		fprintf(stderr, "\n[UNKNOWN]\n");
+    // something weird happened
+    if (WIFSIGNALED(stat))
+        fprintf(stderr, "\n[SIGNAL %d]\n", WTERMSIG(stat));
+    else
+        fprintf(stderr, "\n[UNKNOWN]\n");
 
-	return -13;
+    return -13;
 }
 
 // P value estimate from Chi2, DF=1
