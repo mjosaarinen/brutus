@@ -1,0 +1,866 @@
+== acorn128-ref ==
+COMPILING crypto_aead/acorn128/ref/encrypt.c
+OK.  19113	aeadlibs/acorn128-ref.so
+
+== aeadaes128ocbtaglen128v1-ref ==
+COMPILING crypto_aead/aeadaes128ocbtaglen128v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes128ocbtaglen128v1-ref.so
+
+== aeadaes128ocbtaglen64v1-ref ==
+COMPILING crypto_aead/aeadaes128ocbtaglen64v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes128ocbtaglen64v1-ref.so
+
+== aeadaes128ocbtaglen96v1-ref ==
+COMPILING crypto_aead/aeadaes128ocbtaglen96v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes128ocbtaglen96v1-ref.so
+
+== aeadaes192ocbtaglen128v1-ref ==
+COMPILING crypto_aead/aeadaes192ocbtaglen128v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes192ocbtaglen128v1-ref.so
+
+== aeadaes192ocbtaglen64v1-ref ==
+COMPILING crypto_aead/aeadaes192ocbtaglen64v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes192ocbtaglen64v1-ref.so
+
+== aeadaes192ocbtaglen96v1-ref ==
+COMPILING crypto_aead/aeadaes192ocbtaglen96v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes192ocbtaglen96v1-ref.so
+
+== aeadaes256ocbtaglen128v1-ref ==
+COMPILING crypto_aead/aeadaes256ocbtaglen128v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes256ocbtaglen128v1-ref.so
+
+== aeadaes256ocbtaglen64v1-ref ==
+COMPILING crypto_aead/aeadaes256ocbtaglen64v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes256ocbtaglen64v1-ref.so
+
+== aeadaes256ocbtaglen96v1-ref ==
+COMPILING crypto_aead/aeadaes256ocbtaglen96v1/ref/encrypt.c
+OK.  27055	aeadlibs/aeadaes256ocbtaglen96v1-ref.so
+
+== aegis128-aesni ==
+COMPILING crypto_aead/aegis128/aesni/encrypt.c
+FAIL:  74  391 5170 aeadlibs/aegis128-aesni.err
+
+== aegis128l-aesnia ==
+COMPILING crypto_aead/aegis128l/aesnia/encrypt.c
+FAIL: 110  577 7771 aeadlibs/aegis128l-aesnia.err
+
+== aegis128l-aesnib ==
+COMPILING crypto_aead/aegis128l/aesnib/encrypt.c
+FAIL:  214  1125 14938 aeadlibs/aegis128l-aesnib.err
+
+== aegis128l-aesnic ==
+COMPILING crypto_aead/aegis128l/aesnic/encrypt.c
+FAIL:  514  2711 35729 aeadlibs/aegis128l-aesnic.err
+
+== aegis128l-ref ==
+COMPILING crypto_aead/aegis128l/ref/aes.c crypto_aead/aegis128l/ref/ecrypt.c
+OK.  27399	aeadlibs/aegis128l-ref.so
+
+== aegis128-ref ==
+COMPILING crypto_aead/aegis128/ref/aes.c crypto_aead/aegis128/ref/encrypt.c
+OK.  23300	aeadlibs/aegis128-ref.so
+
+== aegis256-aesni ==
+COMPILING crypto_aead/aegis256/aesni/encrypt.c
+FAIL: 104  545 7289 aeadlibs/aegis256-aesni.err
+
+== aegis256-ref ==
+COMPILING crypto_aead/aegis256/ref/aes.c crypto_aead/aegis256/ref/encrypt.c
+OK.  23268	aeadlibs/aegis256-ref.so
+
+== aes128avalanchev1-ref ==
+COMPILING crypto_aead/aes128avalanchev1/ref/avalanche.c crypto_aead/aes128avalanchev1/ref/largenumbers.c crypto_aead/aes128avalanchev1/ref/pcmac.c crypto_aead/aes128avalanchev1/ref/rmac.c
+OK.  24344	aeadlibs/aes128avalanchev1-ref.so
+
+== aes128cpfbv1-aesni ==
+COMPILING crypto_aead/aes128cpfbv1/aesni/cpfbkey.c crypto_aead/aes128cpfbv1/aesni/encrypt.c
+FAIL:  414  2261 25243 aeadlibs/aes128cpfbv1-aesni.err
+
+== aes128cpfbv1-aesref ==
+COMPILING crypto_aead/aes128cpfbv1/aesref/encrypt.c crypto_aead/aes128cpfbv1/aesref/rijndael-alg-fst.c
+OK.  31385	aeadlibs/aes128cpfbv1-aesref.so
+
+== aes128cpfbv1-evp ==
+COMPILING crypto_aead/aes128cpfbv1/evp/encrypt.c
+OK.  18874	aeadlibs/aes128cpfbv1-evp.so
+
+== aes128cpfbv1-gladman ==
+COMPILING crypto_aead/aes128cpfbv1/gladman/aescrypt.c crypto_aead/aes128cpfbv1/gladman/aeskey.c crypto_aead/aes128cpfbv1/gladman/aestab.c crypto_aead/aes128cpfbv1/gladman/encrypt.c
+OK.  31208	aeadlibs/aes128cpfbv1-gladman.so
+
+== aes128cpfbv1-ref ==
+COMPILING crypto_aead/aes128cpfbv1/ref/encrypt.c
+OK.  18569	aeadlibs/aes128cpfbv1-ref.so
+
+== aes128gcmv1-openssl ==
+COMPILING crypto_aead/aes128gcmv1/openssl/decrypt.c crypto_aead/aes128gcmv1/openssl/encrypt.c
+OK.  15162	aeadlibs/aes128gcmv1-openssl.so
+
+== aes128gcmv1-ref ==
+COMPILING crypto_aead/aes128gcmv1/ref/encrypt.c
+OK.  18680	aeadlibs/aes128gcmv1-ref.so
+
+== aes128marble4rv1-ref ==
+COMPILING crypto_aead/aes128marble4rv1/ref/aes_core.c crypto_aead/aes128marble4rv1/ref/encrypt.c crypto_aead/aes128marble4rv1/ref/marble.c crypto_aead/aes128marble4rv1/ref/utils.c
+OK.  48960	aeadlibs/aes128marble4rv1-ref.so
+
+== aes128n12clocv1-ref ==
+COMPILING crypto_aead/aes128n12clocv1/ref/aes_core.c crypto_aead/aes128n12clocv1/ref/cloc.c crypto_aead/aes128n12clocv1/ref/encrypt.c crypto_aead/aes128n12clocv1/ref/utils.c
+OK.  36002	aeadlibs/aes128n12clocv1-ref.so
+
+== aes128n12silcv1-ref ==
+COMPILING crypto_aead/aes128n12silcv1/ref/aes_core.c crypto_aead/aes128n12silcv1/ref/encrypt.c crypto_aead/aes128n12silcv1/ref/silc.c crypto_aead/aes128n12silcv1/ref/utils.c
+OK.  40149	aeadlibs/aes128n12silcv1-ref.so
+
+== aes128n8clocv1-ref ==
+COMPILING crypto_aead/aes128n8clocv1/ref/aes_core.c crypto_aead/aes128n8clocv1/ref/cloc.c crypto_aead/aes128n8clocv1/ref/encrypt.c crypto_aead/aes128n8clocv1/ref/utils.c
+OK.  36002	aeadlibs/aes128n8clocv1-ref.so
+
+== aes128n8silcv1-ref ==
+COMPILING crypto_aead/aes128n8silcv1/ref/aes_core.c crypto_aead/aes128n8silcv1/ref/encrypt.c crypto_aead/aes128n8silcv1/ref/silc.c crypto_aead/aes128n8silcv1/ref/utils.c
+OK.  40149	aeadlibs/aes128n8silcv1-ref.so
+
+== aes128otrpv1-ref ==
+COMPILING crypto_aead/aes128otrpv1/ref/encrypt.c crypto_aead/aes128otrpv1/ref/OTR.c crypto_aead/aes128otrpv1/ref/t-aes_enc_only.c
+OK.  40401	aeadlibs/aes128otrpv1-ref.so
+
+== aes128otrsv1-ref ==
+COMPILING crypto_aead/aes128otrsv1/ref/encrypt.c crypto_aead/aes128otrsv1/ref/OTR.c crypto_aead/aes128otrsv1/ref/t-aes_enc_only.c
+OK.  40444	aeadlibs/aes128otrsv1-ref.so
+
+== aes128poetv1aes128-ni ==
+COMPILING crypto_aead/aes128poetv1aes128/ni/aes-ni.c crypto_aead/aes128poetv1aes128/ni/encrypt.c crypto_aead/aes128poetv1aes128/ni/poet.c
+FAIL:  156   826 10116 aeadlibs/aes128poetv1aes128-ni.err
+
+== aes128poetv1aes128-ref ==
+COMPILING crypto_aead/aes128poetv1aes128/ref/aes.c crypto_aead/aes128poetv1aes128/ref/encrypt.c crypto_aead/aes128poetv1aes128/ref/poet.c
+OK.  44110	aeadlibs/aes128poetv1aes128-ref.so
+
+== aes128poetv1aes4-ni ==
+COMPILING crypto_aead/aes128poetv1aes4/ni/aes-ni.c crypto_aead/aes128poetv1aes4/ni/encrypt.c crypto_aead/aes128poetv1aes4/ni/poet.c
+FAIL:  182   974 11687 aeadlibs/aes128poetv1aes4-ni.err
+
+== aes128poetv1aes4-ref ==
+COMPILING crypto_aead/aes128poetv1aes4/ref/aes.c crypto_aead/aes128poetv1aes4/ref/encrypt.c crypto_aead/aes128poetv1aes4/ref/poet.c
+OK.  44118	aeadlibs/aes128poetv1aes4-ref.so
+
+== aes192avalanchev1-ref ==
+COMPILING crypto_aead/aes192avalanchev1/ref/avalanche.c crypto_aead/aes192avalanchev1/ref/largenumbers.c crypto_aead/aes192avalanchev1/ref/pcmac.c crypto_aead/aes192avalanchev1/ref/rmac.c
+OK.  24344	aeadlibs/aes192avalanchev1-ref.so
+
+== aes256avalanchev1-ref ==
+COMPILING crypto_aead/aes256avalanchev1/ref/avalanche.c crypto_aead/aes256avalanchev1/ref/largenumbers.c crypto_aead/aes256avalanchev1/ref/pcmac.c crypto_aead/aes256avalanchev1/ref/rmac.c
+OK.  24344	aeadlibs/aes256avalanchev1-ref.so
+
+== aes256cpfbv1-aesni ==
+COMPILING crypto_aead/aes256cpfbv1/aesni/cpfbkey.c crypto_aead/aes256cpfbv1/aesni/encrypt.c
+FAIL:  428  2341 26161 aeadlibs/aes256cpfbv1-aesni.err
+
+== aes256cpfbv1-aesref ==
+COMPILING crypto_aead/aes256cpfbv1/aesref/encrypt.c crypto_aead/aes256cpfbv1/aesref/rijndael-alg-fst.c
+OK.  31385	aeadlibs/aes256cpfbv1-aesref.so
+
+== aes256cpfbv1-evp ==
+COMPILING crypto_aead/aes256cpfbv1/evp/encrypt.c
+OK.  18874	aeadlibs/aes256cpfbv1-evp.so
+
+== aes256cpfbv1-gladman ==
+COMPILING crypto_aead/aes256cpfbv1/gladman/aescrypt.c crypto_aead/aes256cpfbv1/gladman/aeskey.c crypto_aead/aes256cpfbv1/gladman/aestab.c crypto_aead/aes256cpfbv1/gladman/encrypt.c
+OK.  31208	aeadlibs/aes256cpfbv1-gladman.so
+
+== aes256cpfbv1-ref ==
+COMPILING crypto_aead/aes256cpfbv1/ref/encrypt.c
+OK.  18569	aeadlibs/aes256cpfbv1-ref.so
+
+== aes256gcmv1-cryptopp ==
+COMPILING crypto_aead/aes256gcmv1/cryptopp/stream.cpp
+FAIL:  4  14 185 aeadlibs/aes256gcmv1-cryptopp.err
+
+== aes256gcmv1-dolbeau ==
+COMPILING
+FAIL:  4  14 131 aeadlibs/aes256gcmv1-dolbeau.err
+
+== aes256gcmv1-openssl ==
+COMPILING crypto_aead/aes256gcmv1/openssl/decrypt.c crypto_aead/aes256gcmv1/openssl/encrypt.c
+OK.  15162	aeadlibs/aes256gcmv1-openssl.so
+
+== aes256gcmv1-ref ==
+COMPILING crypto_aead/aes256gcmv1/ref/encrypt.c
+OK.  18680	aeadlibs/aes256gcmv1-ref.so
+
+== aes256otrpv1-ref ==
+COMPILING crypto_aead/aes256otrpv1/ref/encrypt.c crypto_aead/aes256otrpv1/ref/OTR.c crypto_aead/aes256otrpv1/ref/t-aes_enc_only.c
+OK.  40401	aeadlibs/aes256otrpv1-ref.so
+
+== aes256otrsv1-ref ==
+COMPILING crypto_aead/aes256otrsv1/ref/encrypt.c crypto_aead/aes256otrsv1/ref/OTR.c crypto_aead/aes256otrsv1/ref/t-aes_enc_only.c
+OK.  40444	aeadlibs/aes256otrsv1-ref.so
+
+== aescopav1-ref ==
+COMPILING crypto_aead/aescopav1/ref/aes-core.c crypto_aead/aescopav1/ref/encrypt.c
+OK.  56887	aeadlibs/aescopav1-ref.so
+
+== aesjambuv1-aesni ==
+COMPILING crypto_aead/aesjambuv1/aesni/encrypt.c
+FAIL:  184   898 10568 aeadlibs/aesjambuv1-aesni.err
+
+== aesjambuv1-ref ==
+COMPILING crypto_aead/aesjambuv1/ref/aes.c crypto_aead/aesjambuv1/ref/encrypt.c
+OK.  24194	aeadlibs/aesjambuv1-ref.so
+
+== aezv1-ref ==
+COMPILING crypto_aead/aezv1/ref/aez_ref.c crypto_aead/aezv1/ref/encrypt.c crypto_aead/aezv1/ref/rijndael-alg-fst.c
+OK.  48599	aeadlibs/aezv1-ref.so
+
+== artemia128v1-ref ==
+COMPILING crypto_aead/artemia128v1/ref/encrypt.c crypto_aead/artemia128v1/ref/jhae_decryption.c crypto_aead/artemia128v1/ref/jhae_encryption.c crypto_aead/artemia128v1/ref/jhae_padding.c crypto_aead/artemia128v1/ref/jhae_permutation.c
+OK.  28024	aeadlibs/artemia128v1-ref.so
+
+== artemia256v1-ref ==
+COMPILING crypto_aead/artemia256v1/ref/encrypt.c crypto_aead/artemia256v1/ref/jhae_decryption.c crypto_aead/artemia256v1/ref/jhae_encryption.c crypto_aead/artemia256v1/ref/jhae_padding.c crypto_aead/artemia256v1/ref/jhae_permutation.c
+OK.  28024	aeadlibs/artemia256v1-ref.so
+
+== ascon128v1-opt64 ==
+COMPILING crypto_aead/ascon128v1/opt64/ascon.c
+OK.  26732	aeadlibs/ascon128v1-opt64.so
+
+== ascon128v1-ref ==
+COMPILING crypto_aead/ascon128v1/ref/ascon.c
+OK.  18852	aeadlibs/ascon128v1-ref.so
+
+== ascon96v1-opt64 ==
+COMPILING crypto_aead/ascon96v1/opt64/ascon.c
+OK.  30828	aeadlibs/ascon96v1-opt64.so
+
+== ascon96v1-ref ==
+COMPILING crypto_aead/ascon96v1/ref/ascon.c
+OK.  18852	aeadlibs/ascon96v1-ref.so
+
+== calicov8-ref ==
+COMPILING crypto_aead/calicov8/ref/calico.cpp crypto_aead/calicov8/ref/encrypt.c
+OK.  18722	aeadlibs/calicov8-ref.so
+
+== cba10-ref ==
+COMPILING crypto_aead/cba10/ref/encrypt.c
+OK.  39498	aeadlibs/cba10-ref.so
+
+== cba1-ref ==
+COMPILING crypto_aead/cba1/ref/encrypt.c
+OK.  39498	aeadlibs/cba1-ref.so
+
+== cba2-ref ==
+COMPILING crypto_aead/cba2/ref/encrypt.c
+OK.  39498	aeadlibs/cba2-ref.so
+
+== cba3-ref ==
+COMPILING crypto_aead/cba3/ref/encrypt.c
+OK.  39498	aeadlibs/cba3-ref.so
+
+== cba4-ref ==
+COMPILING crypto_aead/cba4/ref/encrypt.c
+OK.  39498	aeadlibs/cba4-ref.so
+
+== cba5-ref ==
+COMPILING crypto_aead/cba5/ref/encrypt.c
+OK.  39498	aeadlibs/cba5-ref.so
+
+== cba6-ref ==
+COMPILING crypto_aead/cba6/ref/encrypt.c
+OK.  39498	aeadlibs/cba6-ref.so
+
+== cba7-ref ==
+COMPILING crypto_aead/cba7/ref/encrypt.c
+OK.  39498	aeadlibs/cba7-ref.so
+
+== cba8-ref ==
+COMPILING crypto_aead/cba8/ref/encrypt.c
+OK.  39498	aeadlibs/cba8-ref.so
+
+== cba9-ref ==
+COMPILING crypto_aead/cba9/ref/encrypt.c
+OK.  39498	aeadlibs/cba9-ref.so
+
+== cmcc22v1-ref ==
+COMPILING crypto_aead/cmcc22v1/ref/encrypt.c
+OK.  23108	aeadlibs/cmcc22v1-ref.so
+
+== cmcc24v1-ref ==
+COMPILING crypto_aead/cmcc24v1/ref/encrypt.c
+OK.  23108	aeadlibs/cmcc24v1-ref.so
+
+== cmcc42v1-ref ==
+COMPILING crypto_aead/cmcc42v1/ref/encrypt.c
+OK.  23108	aeadlibs/cmcc42v1-ref.so
+
+== cmcc44v1-ref ==
+COMPILING crypto_aead/cmcc44v1/ref/encrypt.c
+OK.  23108	aeadlibs/cmcc44v1-ref.so
+
+== cmcc84v1-ref ==
+COMPILING crypto_aead/cmcc84v1/ref/encrypt.c
+OK.  23108	aeadlibs/cmcc84v1-ref.so
+
+== deoxyseq128128v1-opt ==
+COMPILING crypto_aead/deoxyseq128128v1/opt/deoxys.c crypto_aead/deoxyseq128128v1/opt/encrypt.c
+FAIL:  19908  127830 1227143 aeadlibs/deoxyseq128128v1-opt.err
+
+== deoxyseq128128v1-ref ==
+COMPILING crypto_aead/deoxyseq128128v1/ref/deoxys.c crypto_aead/deoxyseq128128v1/ref/encrypt.c crypto_aead/deoxyseq128128v1/ref/tweakableBC.c
+OK.  44338	aeadlibs/deoxyseq128128v1-ref.so
+
+== deoxyseq256128v1-opt ==
+COMPILING crypto_aead/deoxyseq256128v1/opt/deoxys-256.c crypto_aead/deoxyseq256128v1/opt/encrypt.c
+FAIL:  22198  144762 1420987 aeadlibs/deoxyseq256128v1-opt.err
+
+== deoxyseq256128v1-ref ==
+COMPILING crypto_aead/deoxyseq256128v1/ref/deoxys.c crypto_aead/deoxyseq256128v1/ref/encrypt.c crypto_aead/deoxyseq256128v1/ref/tweakableBC.c
+OK.  44338	aeadlibs/deoxyseq256128v1-ref.so
+
+== deoxysneq128128v1-opt ==
+COMPILING crypto_aead/deoxysneq128128v1/opt/deoxys.c crypto_aead/deoxysneq128128v1/opt/encrypt.c
+FAIL: 12811  80369 778231 aeadlibs/deoxysneq128128v1-opt.err
+
+== deoxysneq128128v1-ref ==
+COMPILING crypto_aead/deoxysneq128128v1/ref/deoxys.c crypto_aead/deoxysneq128128v1/ref/encrypt.c crypto_aead/deoxysneq128128v1/ref/tweakableBC.c
+OK.  44268	aeadlibs/deoxysneq128128v1-ref.so
+
+== deoxysneq256128v1-opt ==
+COMPILING crypto_aead/deoxysneq256128v1/opt/deoxys-256.c crypto_aead/deoxysneq256128v1/opt/encrypt.c
+FAIL: 14367  91201 900031 aeadlibs/deoxysneq256128v1-opt.err
+
+== deoxysneq256128v1-ref ==
+COMPILING crypto_aead/deoxysneq256128v1/ref/deoxys.c crypto_aead/deoxysneq256128v1/ref/encrypt.c crypto_aead/deoxysneq256128v1/ref/tweakableBC.c
+OK.  44268	aeadlibs/deoxysneq256128v1-ref.so
+
+== elmd1000v1-ref ==
+COMPILING crypto_aead/elmd1000v1/ref/encrypt.c
+OK.  52427	aeadlibs/elmd1000v1-ref.so
+
+== elmd1001v1-ref ==
+COMPILING crypto_aead/elmd1001v1/ref/encrypt.c
+OK.  48331	aeadlibs/elmd1001v1-ref.so
+
+== elmd101270v1-ref ==
+COMPILING crypto_aead/elmd101270v1/ref/encrypt.c
+OK.  52427	aeadlibs/elmd101270v1-ref.so
+
+== elmd101271v1-ref ==
+COMPILING crypto_aead/elmd101271v1/ref/encrypt.c
+OK.  52427	aeadlibs/elmd101271v1-ref.so
+
+== elmd500v1-ref ==
+COMPILING crypto_aead/elmd500v1/ref/encrypt.c
+OK.  52435	aeadlibs/elmd500v1-ref.so
+
+== elmd501v1-ref ==
+COMPILING crypto_aead/elmd501v1/ref/encrypt.c
+OK.  48339	aeadlibs/elmd501v1-ref.so
+
+== elmd51270v1-ref ==
+COMPILING crypto_aead/elmd51270v1/ref/encrypt.c
+OK.  52435	aeadlibs/elmd51270v1-ref.so
+
+== elmd51271v1-ref ==
+COMPILING crypto_aead/elmd51271v1/ref/encrypt.c
+OK.  52435	aeadlibs/elmd51271v1-ref.so
+
+== enchilada128v1-ref ==
+COMPILING crypto_aead/enchilada128v1/ref/aes.c crypto_aead/enchilada128v1/ref/auth.c crypto_aead/enchilada128v1/ref/chacha.c crypto_aead/enchilada128v1/ref/enchilada.c
+OK.  27997	aeadlibs/enchilada128v1-ref.so
+
+== enchilada128v1-used ==
+COMPILING
+FAIL:  5  23 215 aeadlibs/enchilada128v1-used.err
+
+== enchilada256v1-ref ==
+COMPILING crypto_aead/enchilada256v1/ref/aescrypt.c crypto_aead/enchilada256v1/ref/aestab.c crypto_aead/enchilada256v1/ref/auth.c crypto_aead/enchilada256v1/ref/chacha.c crypto_aead/enchilada256v1/ref/enchilada256.c
+OK.  61192	aeadlibs/enchilada256v1-ref.so
+
+== hs1sivhiv1-dolbeau ==
+COMPILING
+FAIL:  4  14 131 aeadlibs/hs1sivhiv1-dolbeau.err
+
+== hs1sivhiv1-ref ==
+COMPILING crypto_aead/hs1sivhiv1/ref/encrypt.c
+OK.  19273	aeadlibs/hs1sivhiv1-ref.so
+
+== hs1sivlov1-ref ==
+COMPILING crypto_aead/hs1sivlov1/ref/encrypt.c
+OK.  19273	aeadlibs/hs1sivlov1-ref.so
+
+== hs1sivv1-ref ==
+COMPILING crypto_aead/hs1sivv1/ref/encrypt.c
+OK.  19273	aeadlibs/hs1sivv1-ref.so
+
+== icepole128av1-ref ==
+COMPILING crypto_aead/icepole128av1/ref/encrypt.c crypto_aead/icepole128av1/ref/icepole.c
+OK.  19339	aeadlibs/icepole128av1-ref.so
+
+== icepole128v1-ref ==
+COMPILING crypto_aead/icepole128v1/ref/encrypt.c crypto_aead/icepole128v1/ref/icepole.c
+OK.  19335	aeadlibs/icepole128v1-ref.so
+
+== icepole256av1-ref ==
+COMPILING crypto_aead/icepole256av1/ref/encrypt.c crypto_aead/icepole256av1/ref/icepole.c
+OK.  19339	aeadlibs/icepole256av1-ref.so
+
+== ifeedaes128n104v1-ref ==
+COMPILING crypto_aead/ifeedaes128n104v1/ref/encrypt.c
+OK.  28150	aeadlibs/ifeedaes128n104v1-ref.so
+
+== ifeedaes128n96v1-ref ==
+COMPILING crypto_aead/ifeedaes128n96v1/ref/encrypt.c
+OK.  28150	aeadlibs/ifeedaes128n96v1-ref.so
+
+== iscream12v1-neon ==
+COMPILING crypto_aead/iscream12v1/neon/iscream.c crypto_aead/iscream12v1/neon/tae.c
+FAIL: 10  38 455 aeadlibs/iscream12v1-neon.err
+
+== iscream12v1-neon_compiled ==
+COMPILING crypto_aead/iscream12v1/neon_compiled/iscream.s crypto_aead/iscream12v1/neon_compiled/tae.s
+FAIL:  6539  48161 704749 aeadlibs/iscream12v1-neon_compiled.err
+
+== iscream12v1-ref ==
+COMPILING crypto_aead/iscream12v1/ref/iscream_cipher.c crypto_aead/iscream12v1/ref/tae.c
+OK.  19942	aeadlibs/iscream12v1-ref.so
+
+== iscream12v1-sse ==
+COMPILING crypto_aead/iscream12v1/sse/iscream.c crypto_aead/iscream12v1/sse/tae.c
+OK.  31708	aeadlibs/iscream12v1-sse.so
+
+== iscream12v2-neon ==
+COMPILING crypto_aead/iscream12v2/neon/iscream.c crypto_aead/iscream12v2/neon/tae.c
+FAIL: 10  38 455 aeadlibs/iscream12v2-neon.err
+
+== iscream12v2-neon_compiled ==
+COMPILING crypto_aead/iscream12v2/neon_compiled/iscream.s crypto_aead/iscream12v2/neon_compiled/tae.s
+FAIL:  6145  45030 658893 aeadlibs/iscream12v2-neon_compiled.err
+
+== iscream12v2-ref ==
+COMPILING crypto_aead/iscream12v2/ref/iscream_cipher.c crypto_aead/iscream12v2/ref/tae.c
+OK.  19942	aeadlibs/iscream12v2-ref.so
+
+== iscream12v2-sse ==
+COMPILING crypto_aead/iscream12v2/sse/iscream.c crypto_aead/iscream12v2/sse/tae.c
+OK.  31708	aeadlibs/iscream12v2-sse.so
+
+== iscream14v1-neon ==
+COMPILING crypto_aead/iscream14v1/neon/iscream.c crypto_aead/iscream14v1/neon/tae.c
+FAIL: 10  38 455 aeadlibs/iscream14v1-neon.err
+
+== iscream14v1-neon_compiled ==
+COMPILING crypto_aead/iscream14v1/neon_compiled/iscream.s crypto_aead/iscream14v1/neon_compiled/tae.s
+FAIL:  6553  48261 706240 aeadlibs/iscream14v1-neon_compiled.err
+
+== iscream14v1-ref ==
+COMPILING crypto_aead/iscream14v1/ref/iscream_cipher.c crypto_aead/iscream14v1/ref/tae.c
+OK.  19942	aeadlibs/iscream14v1-ref.so
+
+== iscream14v1-sse ==
+COMPILING crypto_aead/iscream14v1/sse/iscream.c crypto_aead/iscream14v1/sse/tae.c
+OK.  31708	aeadlibs/iscream14v1-sse.so
+
+== iscream14v2-neon ==
+COMPILING crypto_aead/iscream14v2/neon/iscream.c crypto_aead/iscream14v2/neon/tae.c
+FAIL: 10  38 455 aeadlibs/iscream14v2-neon.err
+
+== iscream14v2-neon_compiled ==
+COMPILING crypto_aead/iscream14v2/neon_compiled/iscream.s crypto_aead/iscream14v2/neon_compiled/tae.s
+FAIL:  6159  45130 660384 aeadlibs/iscream14v2-neon_compiled.err
+
+== iscream14v2-ref ==
+COMPILING crypto_aead/iscream14v2/ref/iscream_cipher.c crypto_aead/iscream14v2/ref/tae.c
+OK.  19942	aeadlibs/iscream14v2-ref.so
+
+== iscream14v2-sse ==
+COMPILING crypto_aead/iscream14v2/sse/iscream.c crypto_aead/iscream14v2/sse/tae.c
+OK.  31708	aeadlibs/iscream14v2-sse.so
+
+== joltikeq12864v1-ref ==
+COMPILING crypto_aead/joltikeq12864v1/ref/encrypt.c crypto_aead/joltikeq12864v1/ref/joltik.c crypto_aead/joltikeq12864v1/ref/tweakableBC.c
+OK.  31969	aeadlibs/joltikeq12864v1-ref.so
+
+== joltikeq6464v1-ref ==
+COMPILING crypto_aead/joltikeq6464v1/ref/encrypt.c crypto_aead/joltikeq6464v1/ref/joltik.c crypto_aead/joltikeq6464v1/ref/tweakableBC.c
+OK.  31969	aeadlibs/joltikeq6464v1-ref.so
+
+== joltikeq8048v1-ref ==
+COMPILING crypto_aead/joltikeq8048v1/ref/encrypt.c crypto_aead/joltikeq8048v1/ref/joltik.c crypto_aead/joltikeq8048v1/ref/tweakableBC.c
+OK.  31969	aeadlibs/joltikeq8048v1-ref.so
+
+== joltikeq9696v1-ref ==
+COMPILING crypto_aead/joltikeq9696v1/ref/encrypt.c crypto_aead/joltikeq9696v1/ref/joltik.c crypto_aead/joltikeq9696v1/ref/tweakableBC.c
+OK.  31969	aeadlibs/joltikeq9696v1-ref.so
+
+== joltikneq12864v1-ref ==
+COMPILING crypto_aead/joltikneq12864v1/ref/encrypt.c crypto_aead/joltikneq12864v1/ref/joltik.c crypto_aead/joltikneq12864v1/ref/tweakableBC.c
+OK.  27803	aeadlibs/joltikneq12864v1-ref.so
+
+== joltikneq12864v1-vperm ==
+COMPILING crypto_aead/joltikneq12864v1/vperm/encrypt.c crypto_aead/joltikneq12864v1/vperm/joltik.c crypto_aead/joltikneq12864v1/vperm/tweakableBC.c
+OK.  65470	aeadlibs/joltikneq12864v1-vperm.so
+
+== joltikneq6464v1-ref ==
+COMPILING crypto_aead/joltikneq6464v1/ref/encrypt.c crypto_aead/joltikneq6464v1/ref/joltik.c crypto_aead/joltikneq6464v1/ref/tweakableBC.c
+OK.  27803	aeadlibs/joltikneq6464v1-ref.so
+
+== joltikneq6464v1-vperm ==
+COMPILING crypto_aead/joltikneq6464v1/vperm/encrypt.c crypto_aead/joltikneq6464v1/vperm/joltik.c crypto_aead/joltikneq6464v1/vperm/tweakableBC.c
+OK.  53088	aeadlibs/joltikneq6464v1-vperm.so
+
+== joltikneq8048v1-ref ==
+COMPILING crypto_aead/joltikneq8048v1/ref/encrypt.c crypto_aead/joltikneq8048v1/ref/joltik.c crypto_aead/joltikneq8048v1/ref/tweakableBC.c
+OK.  27803	aeadlibs/joltikneq8048v1-ref.so
+
+== joltikneq8048v1-vperm ==
+COMPILING crypto_aead/joltikneq8048v1/vperm/encrypt.c crypto_aead/joltikneq8048v1/vperm/joltik.c crypto_aead/joltikneq8048v1/vperm/tweakableBC.c
+OK.  48992	aeadlibs/joltikneq8048v1-vperm.so
+
+== joltikneq9696v1-ref ==
+COMPILING crypto_aead/joltikneq9696v1/ref/encrypt.c crypto_aead/joltikneq9696v1/ref/joltik.c crypto_aead/joltikneq9696v1/ref/tweakableBC.c
+OK.  31899	aeadlibs/joltikneq9696v1-ref.so
+
+== joltikneq9696v1-vperm ==
+COMPILING crypto_aead/joltikneq9696v1/vperm/encrypt.c crypto_aead/joltikneq9696v1/vperm/joltik.c crypto_aead/joltikneq9696v1/vperm/tweakableBC.c
+OK.  73662	aeadlibs/joltikneq9696v1-vperm.so
+
+== juliusv1draft-ref ==
+COMPILING crypto_aead/juliusv1draft/ref/aes.c crypto_aead/juliusv1draft/ref/encrypt.c crypto_aead/juliusv1draft/ref/functions.c
+FAIL:  37  160 2322 aeadlibs/juliusv1draft-ref.err
+
+== ketjejrv1-ref ==
+COMPILING crypto_aead/ketjejrv1/ref/displayIntermediateValues.c crypto_aead/ketjejrv1/ref/encrypt.c crypto_aead/ketjejrv1/ref/KeccakF-200-reference.c crypto_aead/ketjejrv1/ref/KeccakP-200-reference.c crypto_aead/ketjejrv1/ref/Ket.c crypto_aead/ketjejrv1/ref/Ketje.c
+OK.  34035	aeadlibs/ketjejrv1-ref.so
+
+== ketjesrv1-ref ==
+COMPILING crypto_aead/ketjesrv1/ref/displayIntermediateValues.c crypto_aead/ketjesrv1/ref/encrypt.c crypto_aead/ketjesrv1/ref/KeccakF-400-reference.c crypto_aead/ketjesrv1/ref/KeccakP-400-reference.c crypto_aead/ketjesrv1/ref/Ket.c crypto_aead/ketjesrv1/ref/Ketje.c
+OK.  34035	aeadlibs/ketjesrv1-ref.so
+
+== kiasueq128v1-bitslice ==
+COMPILING crypto_aead/kiasueq128v1/bitslice/aes_tweaked.s crypto_aead/kiasueq128v1/bitslice/common.s crypto_aead/kiasueq128v1/bitslice/encrypt.c crypto_aead/kiasueq128v1/bitslice/invaes_tweaked.s crypto_aead/kiasueq128v1/bitslice/kiasu.c
+FAIL:  3  31 225 aeadlibs/kiasueq128v1-bitslice.err
+
+== kiasueq128v1-opt ==
+COMPILING crypto_aead/kiasueq128v1/opt/encrypt.c crypto_aead/kiasueq128v1/opt/kiasu.c
+FAIL:  7820  51138 447935 aeadlibs/kiasueq128v1-opt.err
+
+== kiasueq128v1-ref ==
+COMPILING crypto_aead/kiasueq128v1/ref/encrypt.c crypto_aead/kiasueq128v1/ref/kiasu.c crypto_aead/kiasueq128v1/ref/tweakable_aes.c
+OK.  40091	aeadlibs/kiasueq128v1-ref.so
+
+== kiasuneq128v1-bitslice ==
+COMPILING crypto_aead/kiasuneq128v1/bitslice/aes_tweaked.s crypto_aead/kiasuneq128v1/bitslice/common.s crypto_aead/kiasuneq128v1/bitslice/encrypt.c crypto_aead/kiasuneq128v1/bitslice/invaes_tweaked.s crypto_aead/kiasuneq128v1/bitslice/kiasu.c
+FAIL:  3  31 225 aeadlibs/kiasuneq128v1-bitslice.err
+
+== kiasuneq128v1-opt ==
+COMPILING crypto_aead/kiasuneq128v1/opt/encrypt.c crypto_aead/kiasuneq128v1/opt/kiasu.c
+FAIL:  5032  31725 284205 aeadlibs/kiasuneq128v1-opt.err
+
+== kiasuneq128v1-ref ==
+COMPILING crypto_aead/kiasuneq128v1/ref/encrypt.c crypto_aead/kiasuneq128v1/ref/kiasu.c crypto_aead/kiasuneq128v1/ref/tweakable_aes.c
+OK.  35714	aeadlibs/kiasuneq128v1-ref.so
+
+== lacv1-ref ==
+COMPILING crypto_aead/lacv1/ref/encrypt.c
+OK.  18935	aeadlibs/lacv1-ref.so
+
+== lakekeyakv1-ref ==
+COMPILING crypto_aead/lakekeyakv1/ref/displayIntermediateValues.c crypto_aead/lakekeyakv1/ref/encrypt.c crypto_aead/lakekeyakv1/ref/KeccakDuplex.c crypto_aead/lakekeyakv1/ref/KeccakF-1600-reference.c crypto_aead/lakekeyakv1/ref/KeccakP-1600-12-reference.c crypto_aead/lakekeyakv1/ref/Keyak.c
+OK.  39003	aeadlibs/lakekeyakv1-ref.so
+
+== led80n6silcv1-ref ==
+COMPILING crypto_aead/led80n6silcv1/ref/encrypt.c crypto_aead/led80n6silcv1/ref/led.c crypto_aead/led80n6silcv1/ref/silc.c crypto_aead/led80n6silcv1/ref/utils.c
+OK.  19735	aeadlibs/led80n6silcv1-ref.so
+
+== minalpherv1-ref ==
+COMPILING crypto_aead/minalpherv1/ref/encrypt.c
+OK.  23361	aeadlibs/minalpherv1-ref.so
+
+== morus1280128v1-avx2 ==
+COMPILING crypto_aead/morus1280128v1/avx2/morus1280128v1avx2.c
+FAIL:  68  323 5304 aeadlibs/morus1280128v1-avx2.err
+
+== morus1280128v1-ref ==
+COMPILING crypto_aead/morus1280128v1/ref/encrypt.c
+OK.  27182	aeadlibs/morus1280128v1-ref.so
+
+== morus1280128v1-ref64 ==
+COMPILING crypto_aead/morus1280128v1/ref64/morus1280128v1opt64.c
+OK.  19154	aeadlibs/morus1280128v1-ref64.so
+
+== morus1280128v1-sse2 ==
+COMPILING crypto_aead/morus1280128v1/sse2/morus1280128v1sse2.c
+OK.  27426	aeadlibs/morus1280128v1-sse2.so
+
+== morus1280256v1-avx2 ==
+COMPILING crypto_aead/morus1280256v1/avx2/morus1280256v1avx2.c
+FAIL:  68  317 5200 aeadlibs/morus1280256v1-avx2.err
+
+== morus1280256v1-ref ==
+COMPILING crypto_aead/morus1280256v1/ref/encrypt.c
+OK.  31406	aeadlibs/morus1280256v1-ref.so
+
+== morus1280256v1-ref64 ==
+COMPILING crypto_aead/morus1280256v1/ref64/morus1280256v1opt64.c
+OK.  19154	aeadlibs/morus1280256v1-ref64.so
+
+== morus1280256v1-sse2 ==
+COMPILING crypto_aead/morus1280256v1/sse2/morus1280256v1sse2.c
+OK.  19189	aeadlibs/morus1280256v1-sse2.so
+
+== morus640128v1-ref ==
+COMPILING crypto_aead/morus640128v1/ref/encrypt.c
+OK.  27310	aeadlibs/morus640128v1-ref.so
+
+== morus640128v1-sse2 ==
+COMPILING crypto_aead/morus640128v1/sse2/morus640128v1sse2.c
+OK.  15006	aeadlibs/morus640128v1-sse2.so
+
+== norx3241v1-neon ==
+COMPILING crypto_aead/norx3241v1/neon/norx.c
+FAIL:  4  14 164 aeadlibs/norx3241v1-neon.err
+
+== norx3241v1-ref ==
+COMPILING crypto_aead/norx3241v1/ref/caesar.c crypto_aead/norx3241v1/ref/norx.c
+OK.  31510	aeadlibs/norx3241v1-ref.so
+
+== norx3241v1-xmm ==
+COMPILING crypto_aead/norx3241v1/xmm/norx.c
+OK.  22689	aeadlibs/norx3241v1-xmm.so
+
+== norx3261v1-neon ==
+COMPILING crypto_aead/norx3261v1/neon/norx.c
+FAIL:  4  14 164 aeadlibs/norx3261v1-neon.err
+
+== norx3261v1-ref ==
+COMPILING crypto_aead/norx3261v1/ref/caesar.c crypto_aead/norx3261v1/ref/norx.c
+OK.  31510	aeadlibs/norx3261v1-ref.so
+
+== norx3261v1-xmm ==
+COMPILING crypto_aead/norx3261v1/xmm/norx.c
+OK.  18593	aeadlibs/norx3261v1-xmm.so
+
+== norx6441v1-neon ==
+COMPILING crypto_aead/norx6441v1/neon/norx.c
+FAIL:  4  14 164 aeadlibs/norx6441v1-neon.err
+
+== norx6441v1-ref ==
+COMPILING crypto_aead/norx6441v1/ref/caesar.c crypto_aead/norx6441v1/ref/norx.c
+OK.  31510	aeadlibs/norx6441v1-ref.so
+
+== norx6441v1-xmm ==
+COMPILING crypto_aead/norx6441v1/xmm/norx.c
+OK.  26785	aeadlibs/norx6441v1-xmm.so
+
+== norx6441v1-ymm ==
+COMPILING crypto_aead/norx6441v1/ymm/norx.c
+FAIL: 1078  4879 55421 aeadlibs/norx6441v1-ymm.err
+
+== norx6444v1-ref ==
+COMPILING crypto_aead/norx6444v1/ref/caesar.c crypto_aead/norx6444v1/ref/norx.c
+OK.  39702	aeadlibs/norx6444v1-ref.so
+
+== norx6461v1-neon ==
+COMPILING crypto_aead/norx6461v1/neon/norx.c
+FAIL:  4  14 164 aeadlibs/norx6461v1-neon.err
+
+== norx6461v1-ref ==
+COMPILING crypto_aead/norx6461v1/ref/caesar.c crypto_aead/norx6461v1/ref/norx.c
+OK.  31510	aeadlibs/norx6461v1-ref.so
+
+== norx6461v1-xmm ==
+COMPILING crypto_aead/norx6461v1/xmm/norx.c
+OK.  26785	aeadlibs/norx6461v1-xmm.so
+
+== norx6461v1-ymm ==
+COMPILING crypto_aead/norx6461v1/ymm/norx.c
+FAIL: 1078  4879 55421 aeadlibs/norx6461v1-ymm.err
+
+== oceankeyakv1-ref ==
+COMPILING crypto_aead/oceankeyakv1/ref/displayIntermediateValues.c crypto_aead/oceankeyakv1/ref/encrypt.c crypto_aead/oceankeyakv1/ref/KeccakDuplex.c crypto_aead/oceankeyakv1/ref/KeccakF-1600-reference.c crypto_aead/oceankeyakv1/ref/KeccakP-1600-12-reference.c crypto_aead/oceankeyakv1/ref/KeccakParallelDuplex.c crypto_aead/oceankeyakv1/ref/Keyak.c crypto_aead/oceankeyakv1/ref/SerialFallback.c crypto_aead/oceankeyakv1/ref/testParallelPaSM.c
+OK.  58273	aeadlibs/oceankeyakv1-ref.so
+
+== omdsha256k128n96tau128v1-avx1 ==
+COMPILING crypto_aead/omdsha256k128n96tau128v1/avx1/encrypt.c crypto_aead/omdsha256k128n96tau128v1/avx1/omdsha256.c
+OK.  30879	aeadlibs/omdsha256k128n96tau128v1-avx1.so
+
+== omdsha256k128n96tau128v1-ref ==
+COMPILING crypto_aead/omdsha256k128n96tau128v1/ref/encrypt.c crypto_aead/omdsha256k128n96tau128v1/ref/omdsha256.c crypto_aead/omdsha256k128n96tau128v1/ref/sha256.c
+OK.  23605	aeadlibs/omdsha256k128n96tau128v1-ref.so
+
+== omdsha256k128n96tau128v1-sse4 ==
+COMPILING crypto_aead/omdsha256k128n96tau128v1/sse4/encrypt.c crypto_aead/omdsha256k128n96tau128v1/sse4/omdsha256.c
+OK.  30880	aeadlibs/omdsha256k128n96tau128v1-sse4.so
+
+== omdsha256k128n96tau64v1-avx1 ==
+COMPILING crypto_aead/omdsha256k128n96tau64v1/avx1/encrypt.c crypto_aead/omdsha256k128n96tau64v1/avx1/omdsha256.c
+OK.  30879	aeadlibs/omdsha256k128n96tau64v1-avx1.so
+
+== omdsha256k128n96tau64v1-ref ==
+COMPILING crypto_aead/omdsha256k128n96tau64v1/ref/encrypt.c crypto_aead/omdsha256k128n96tau64v1/ref/omdsha256.c crypto_aead/omdsha256k128n96tau64v1/ref/sha256.c
+OK.  23605	aeadlibs/omdsha256k128n96tau64v1-ref.so
+
+== omdsha256k128n96tau64v1-sse4 ==
+COMPILING crypto_aead/omdsha256k128n96tau64v1/sse4/encrypt.c crypto_aead/omdsha256k128n96tau64v1/sse4/omdsha256.c
+OK.  30880	aeadlibs/omdsha256k128n96tau64v1-sse4.so
+
+== omdsha256k128n96tau96v1-avx1 ==
+COMPILING crypto_aead/omdsha256k128n96tau96v1/avx1/encrypt.c crypto_aead/omdsha256k128n96tau96v1/avx1/omdsha256.c
+OK.  30879	aeadlibs/omdsha256k128n96tau96v1-avx1.so
+
+== omdsha256k128n96tau96v1-ref ==
+COMPILING crypto_aead/omdsha256k128n96tau96v1/ref/encrypt.c crypto_aead/omdsha256k128n96tau96v1/ref/omdsha256.c crypto_aead/omdsha256k128n96tau96v1/ref/sha256.c
+OK.  23605	aeadlibs/omdsha256k128n96tau96v1-ref.so
+
+== omdsha256k128n96tau96v1-sse4 ==
+COMPILING crypto_aead/omdsha256k128n96tau96v1/sse4/encrypt.c crypto_aead/omdsha256k128n96tau96v1/sse4/omdsha256.c
+OK.  30880	aeadlibs/omdsha256k128n96tau96v1-sse4.so
+
+== omdsha256k192n104tau128v1-avx1 ==
+COMPILING crypto_aead/omdsha256k192n104tau128v1/avx1/encrypt.c crypto_aead/omdsha256k192n104tau128v1/avx1/omdsha256.c
+OK.  30879	aeadlibs/omdsha256k192n104tau128v1-avx1.so
+
+== omdsha256k192n104tau128v1-ref ==
+COMPILING crypto_aead/omdsha256k192n104tau128v1/ref/encrypt.c crypto_aead/omdsha256k192n104tau128v1/ref/omdsha256.c crypto_aead/omdsha256k192n104tau128v1/ref/sha256.c
+OK.  23605	aeadlibs/omdsha256k192n104tau128v1-ref.so
+
+== omdsha256k192n104tau128v1-sse4 ==
+COMPILING crypto_aead/omdsha256k192n104tau128v1/sse4/encrypt.c crypto_aead/omdsha256k192n104tau128v1/sse4/omdsha256.c
+OK.  30880	aeadlibs/omdsha256k192n104tau128v1-sse4.so
+
+== omdsha256k256n104tau160v1-avx1 ==
+COMPILING crypto_aead/omdsha256k256n104tau160v1/avx1/encrypt.c crypto_aead/omdsha256k256n104tau160v1/avx1/omdsha256.c
+OK.  30879	aeadlibs/omdsha256k256n104tau160v1-avx1.so
+
+== omdsha256k256n104tau160v1-ref ==
+COMPILING crypto_aead/omdsha256k256n104tau160v1/ref/encrypt.c crypto_aead/omdsha256k256n104tau160v1/ref/omdsha256.c crypto_aead/omdsha256k256n104tau160v1/ref/sha256.c
+OK.  23605	aeadlibs/omdsha256k256n104tau160v1-ref.so
+
+== omdsha256k256n104tau160v1-sse4 ==
+COMPILING crypto_aead/omdsha256k256n104tau160v1/sse4/encrypt.c crypto_aead/omdsha256k256n104tau160v1/sse4/omdsha256.c
+OK.  30880	aeadlibs/omdsha256k256n104tau160v1-sse4.so
+
+== omdsha256k256n248tau256v1-avx1 ==
+COMPILING crypto_aead/omdsha256k256n248tau256v1/avx1/encrypt.c crypto_aead/omdsha256k256n248tau256v1/avx1/omdsha256.c
+OK.  30879	aeadlibs/omdsha256k256n248tau256v1-avx1.so
+
+== omdsha256k256n248tau256v1-ref ==
+COMPILING crypto_aead/omdsha256k256n248tau256v1/ref/encrypt.c crypto_aead/omdsha256k256n248tau256v1/ref/omdsha256.c crypto_aead/omdsha256k256n248tau256v1/ref/sha256.c
+OK.  23605	aeadlibs/omdsha256k256n248tau256v1-ref.so
+
+== omdsha256k256n248tau256v1-sse4 ==
+COMPILING crypto_aead/omdsha256k256n248tau256v1/sse4/encrypt.c crypto_aead/omdsha256k256n248tau256v1/sse4/omdsha256.c
+OK.  30880	aeadlibs/omdsha256k256n248tau256v1-sse4.so
+
+== omdsha512k128n128tau128v1-avx1 ==
+COMPILING crypto_aead/omdsha512k128n128tau128v1/avx1/encrypt.c crypto_aead/omdsha512k128n128tau128v1/avx1/omdsha512.c
+OK.  57978	aeadlibs/omdsha512k128n128tau128v1-avx1.so
+
+== omdsha512k128n128tau128v1-ref ==
+COMPILING crypto_aead/omdsha512k128n128tau128v1/ref/encrypt.c crypto_aead/omdsha512k128n128tau128v1/ref/omdsha512.c crypto_aead/omdsha512k128n128tau128v1/ref/sha512.c
+OK.  23605	aeadlibs/omdsha512k128n128tau128v1-ref.so
+
+== omdsha512k128n128tau128v1-sse4 ==
+COMPILING crypto_aead/omdsha512k128n128tau128v1/sse4/encrypt.c crypto_aead/omdsha512k128n128tau128v1/sse4/omdsha512.c
+OK.  53883	aeadlibs/omdsha512k128n128tau128v1-sse4.so
+
+== omdsha512k256n256tau256v1-avx1 ==
+COMPILING crypto_aead/omdsha512k256n256tau256v1/avx1/encrypt.c crypto_aead/omdsha512k256n256tau256v1/avx1/omdsha512.c
+OK.  57978	aeadlibs/omdsha512k256n256tau256v1-avx1.so
+
+== omdsha512k256n256tau256v1-ref ==
+COMPILING crypto_aead/omdsha512k256n256tau256v1/ref/encrypt.c crypto_aead/omdsha512k256n256tau256v1/ref/omdsha512.c crypto_aead/omdsha512k256n256tau256v1/ref/sha512.c
+OK.  23605	aeadlibs/omdsha512k256n256tau256v1-ref.so
+
+== omdsha512k256n256tau256v1-sse4 ==
+COMPILING crypto_aead/omdsha512k256n256tau256v1/sse4/encrypt.c crypto_aead/omdsha512k256n256tau256v1/sse4/omdsha512.c
+OK.  57979	aeadlibs/omdsha512k256n256tau256v1-sse4.so
+
+== omdsha512k512n256tau256v1-avx1 ==
+COMPILING crypto_aead/omdsha512k512n256tau256v1/avx1/encrypt.c crypto_aead/omdsha512k512n256tau256v1/avx1/omdsha512.c
+OK.  57978	aeadlibs/omdsha512k512n256tau256v1-avx1.so
+
+== omdsha512k512n256tau256v1-ref ==
+COMPILING crypto_aead/omdsha512k512n256tau256v1/ref/encrypt.c crypto_aead/omdsha512k512n256tau256v1/ref/omdsha512.c crypto_aead/omdsha512k512n256tau256v1/ref/sha512.c
+OK.  23605	aeadlibs/omdsha512k512n256tau256v1-ref.so
+
+== omdsha512k512n256tau256v1-sse4 ==
+COMPILING crypto_aead/omdsha512k512n256tau256v1/sse4/encrypt.c crypto_aead/omdsha512k512n256tau256v1/sse4/omdsha512.c
+OK.  57979	aeadlibs/omdsha512k512n256tau256v1-sse4.so
+
+== paeq128-ref ==
+COMPILING crypto_aead/paeq128/ref/encrypt.cpp
+OK.  31939	aeadlibs/paeq128-ref.so
+
+== paeq128tnm-ref ==
+COMPILING crypto_aead/paeq128tnm/ref/encrypt.cpp
+OK.  27843	aeadlibs/paeq128tnm-ref.so
+
+== paeq128t-ref ==
+COMPILING crypto_aead/paeq128t/ref/encrypt.cpp
+OK.  31939	aeadlibs/paeq128t-ref.so
+
+== paeq160-ref ==
+COMPILING crypto_aead/paeq160/ref/encrypt.cpp
+OK.  27843	aeadlibs/paeq160-ref.so
+
+== paeq64-ref ==
+COMPILING crypto_aead/paeq64/ref/encrypt.cpp
+OK.  31939	aeadlibs/paeq64-ref.so
+
+== paeq80-ref ==
+COMPILING crypto_aead/paeq80/ref/encrypt.cpp
+OK.  31939	aeadlibs/paeq80-ref.so
+
+== pi16cipher096v1-optimized_nonSSE ==
+COMPILING crypto_aead/pi16cipher096v1/optimized_nonSSE/encrypt.c
+OK.  129265	aeadlibs/pi16cipher096v1-optimized_nonSSE.so
+
+== pi16cipher096v1-ref ==
+COMPILING crypto_aead/pi16cipher096v1/ref/encrypt.c
+OK.  43178	aeadlibs/pi16cipher096v1-ref.so
+
+== pi16cipher128v1-optimized_nonSSE ==
+COMPILING crypto_aead/pi16cipher128v1/optimized_nonSSE/encrypt.c
+OK.  129265	aeadlibs/pi16cipher128v1-optimized_nonSSE.so
+
+== pi16cipher128v1-ref ==
+COMPILING crypto_aead/pi16cipher128v1/ref/encrypt.c
+OK.  43178	aeadlibs/pi16cipher128v1-ref.so
+
+== pi32cipher128v1-optimized_nonSSE ==
+COMPILING crypto_aead/pi32cipher128v1/optimized_nonSSE/encrypt.c
+OK.  104689	aeadlibs/pi32cipher128v1-optimized_nonSSE.so
+
+== pi32cipher128v1-ref ==
+COMPILING crypto_aead/pi32cipher128v1/ref/encrypt.c
+OK.  43178	aeadlibs/pi32cipher128v1-ref.so
+
+== pi32cipher256v1-optimized_nonSSE ==
+COMPILING crypto_aead/pi32cipher256v1/optimized_nonSSE/encrypt.c
+OK.  104689	aeadlibs/pi32cipher256v1-optimized_nonSSE.so
+
+== pi32cipher256v1-ref ==
+COMPILING crypto_aead/pi32cipher256v1/ref/encrypt.c
+OK.  43178	aeadlibs/pi32cipher256v1-ref.so
+
+== pi64cipher128v1-optimized_nonSSE ==
+COMPILING crypto_aead/pi64cipher128v1/optimized_nonSSE/encrypt.c
+OK.  145649	aeadlibs/pi64cipher128v1-optimized_nonSSE.so
+
+== pi64cipher128v1-ref ==
+COMPILING crypto_aead/pi64cipher128v1/ref/encrypt.c
+OK.  51370	aeadlibs/pi64cipher128v1-ref.so
+
+== pi64cipher256v1-optimized_AVX ==
+COMPILING crypto_aead/pi64cipher256v1/optimized_AVX/encrypt_AVX.S
+FAIL:  3  31 236 aeadlibs/pi64cipher256v1-optimized_AVX.err
+
+== pi64cipher256v1-optimized_AVX2 ==
+COMPILING crypto_aead/pi64cipher256v1/optimized_AVX2/encrypt_AVX2.S
+FAIL:  3  31 236 aeadlibs/pi64cipher256v1-optimized_AVX2.err
+
+== pi64cipher256v1-optimized_nonSSE ==
+COMPILING crypto_aead/pi64cipher256v1/optimized_nonSSE/encrypt.c
