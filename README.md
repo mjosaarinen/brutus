@@ -10,7 +10,7 @@ test on. BRUTUS runs on most modern Linux systems, including better-equipped
 embedded systems. The codebase is fairly small, about 1000 lines total.
 
 After fixing bunch of memory leaks and other horrendous bugs in the
-implementations (you guys really should not be qualified to work in security),
+implementations (you guys really should not do security work),
 the reference ciphers are now included with the BRUTUS package.
 
 The reference ciphers are now included with the package.
