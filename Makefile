@@ -4,7 +4,9 @@
 DIST		= brutus
 BIN		= brutus
 OBJS		= src/main.o src/util.o \
-		src/test_coherent.o src/test_speed.o
+		src/speed.o \
+		src/coherence.o \
+		src/xprmnt.o
 
 CC		= $(shell cat brutus_cc.cfg)
 LIBS		= -ldl -lm
@@ -27,5 +29,6 @@ clean:
 			aeadlibs aeadlibs.txt mkaeadlibs.log
 
 dist:		clean		
-		cd ..; tar cfvJ $(DIST)/$(DIST)-`date -u "+%Y%m%d%H%M00"`.txz \
-			$(DIST)/*
+		cd ..; tar cfvJ $(DIST)/$(DIST)-current.txz $(DIST)/*
+#		cd ..; tar cfvJ $(DIST)/$(DIST)-`date -u "+%Y%m%d%H%M00"`.txz \
+#			$(DIST)/*

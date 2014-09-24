@@ -9,6 +9,12 @@ program then loads only those ciphers that you want to run on a particular
 test on. BRUTUS runs on most modern Linux systems, including better-equipped
 embedded systems. The codebase is fairly small, about 1000 lines total.
 
+After fixing bunch of memory leaks and other horrendous bugs in the
+implementations (you guys really should not be qualified to work in security),
+the reference ciphers are now included with the BRUTUS package.
+
+The reference ciphers are now included with the package.
+
 The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
 testing cycle. You can compile and run basic tests on all (nearly 200)
 candidate variants in just few minutes. You can also easily add your own
@@ -33,22 +39,6 @@ Choose a working directory and cd there. Extract the Brutus package.
 $ wget http://mjos.fi/dist/brutus-current.txz
 $ tar xfvJ brutus-current.txz
 ```
-You will need the SUPERCOP package. The latest version at the time of
-writing can be download and extracted as:
-```
-$ wget http://hyperelliptic.org/ebats/supercop-20140910.tar.bz2
-$ tar xfvj supercop-20140910.tar.bz2
-```
-Don't compile or run SUPERCOP! Brutus just needs a symlink to the 
-AEAD reference sources at `crypto_aead`. 
-```
-$ cd brutus
-$ ln -s ../supercop-20140910/crypto_aead crypto_aead
-```
-Replace that with correct path to the real `crypto_aead` subdirectory. You can
-alternatively create a local `crypto_aead` subdirectory and manually copy some 
-subset of ciphers there.
-
 Now check the compiler flags in `brutus_cc.cfg`. If you have an old compiler 
 or an otherwise exotic system, you may want to discard native optimizations and
 go with something geneneric like:
@@ -83,15 +73,37 @@ We also have the `brutus` executable binary:
 ```
 $ ./brutus
 Usage: brutus [flags] aead1.so aead2.so ..
-   -q  Switch off verbatim.
-   -c  Coherence test.
-   -s  Encryption/Authentication Speed test.
-   -f  Fast encryption throughput test.
+  -h   Quick help
+  -q   Switch off verbose
+  -tN  Force exit after N seconds
+  -rN  Use random seed N
+  -cN  Coherence test (N sec timeout)
+  -sN  Encryption/Authentication Speed (N secs each)
+  -fN  Fast throughput test (N secs for enc/dec)
 ```
-Brutus is invoked with library filenames. The following wildcard will test
-all variants of keyak for speed and coherence:
+Brutus is invoked with flags and library filenames. The following wildcard 
+will quickly test all variants of keyak for speed and coherence. Note that
+all numbers "N" are optional; there are defaults. 
 ```
-$ ./brutus -c -s aeadlibs/*keyakv1-*.so
+$ ./brutus -c2 -f aeadlibs/*keyakv1-*.so
+
+BRUTUS (Sep 24 2014) by Markku-Juhani O. Saarinen <mjos@iki.fi>
+[lakekeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
+[lakekeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
+[lakekeyakv1-ref] 43872.97 kB/s  encrypt(mlen=65536 adlen=0) 
+[lakekeyakv1-ref] 43843.24 kB/s  decrypt(mlen=65536 adlen=0)
+[oceankeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
+[oceankeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
+[oceankeyakv1-ref] 43218.39 kB/s  encrypt(mlen=65536 adlen=0) 
+[oceankeyakv1-ref] 43144.13 kB/s  decrypt(mlen=65536 adlen=0) 
+[riverkeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
+[riverkeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
+[riverkeyakv1-ref] 18940.55 kB/s  encrypt(mlen=65536 adlen=0) 
+[riverkeyakv1-ref] 18927.97 kB/s  decrypt(mlen=65536 adlen=0) 
+[seakeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
+[seakeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
+[seakeyakv1-ref] 43575.46 kB/s  encrypt(mlen=65536 adlen=0) 
+[seakeyakv1-ref] 43470.38 kB/s  decrypt(mlen=65536 adlen=0)
 ```
 The output should be mostly self-explanatory.
 

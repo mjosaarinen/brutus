@@ -5,40 +5,51 @@
 #include <math.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include <dlfcn.h>
 #include <time.h>
+#include <ctype.h>
 
 #include "brutus.h"
 
 // global flags
-int brutus_verbatim;
+int brutus_verbose;
+
+const char brutus_usage[] =
+    "Usage: brutus [flags] aead1.so aead2.so ..\n"
+    "  -h   Quick help\n"
+    "  -q   Switch off verbose\n"
+    "  -tN  Force exit after N seconds\n"
+    "  -rN  Use random seed N\n"
+    "  -cN  Coherence test (N sec timeout)\n"
+    "  -sN  Encryption/Authentication Speed (N secs each)\n"
+    "  -fN  Fast throughput test (N secs for enc/dec)\n";
+//  "  -xN  Correlation experiment with param N.\n";
 
 // main
 
 int main(int argc, char **argv)
 {
-    int i, *ipt, ciphers;
+    int t, i, *ipt, ciphers;
     char *str;
     caesar_t *aead, *candidate;
-    int flag_coherent, flag_speed, flag_fast;
+    int flag_coherence, flag_speed, flag_fast, flag_xprmt, flag_timeout;
 
     // test modes
-    flag_coherent = 0;
+    brutus_verbose = 1;
+    flag_coherence = 0;
     flag_speed = 0;
-    brutus_verbatim = 1;
     flag_fast = 0;
+    flag_xprmt = 0;
+    flag_timeout = 0;
 
-    // dynamic parameters
+    // no paramets
     if (argc < 2) {
-        fprintf(stderr, "Usage: brutus [flags] aead1.so aead2.so ..\n"
-                        "   -q  Switch off verbatim.\n"
-                        "   -c  Coherence test.\n"
-                        "   -s  Encryption/Authentication Speed test.\n"
-                        "   -f  Fast encryption throughput test.\n");
+        fprintf(stderr, "%s", brutus_usage);
         return -1;
     }
 
-    // allocate tables
+    // approximate table sizes
     if ((candidate = calloc(argc, sizeof(caesar_t))) == NULL) {
         perror("calloc()");
         return -1;
@@ -49,23 +60,70 @@ int main(int argc, char **argv)
         // flag ?
         if (argv[i][0] == '-') {
 
+            if (argv[i][1] != 0) {
+                t = argv[i][2];
+                if (t >= '0' && t <= '9')
+                    t = atoi(&argv[i][2]);
+                else
+                    t = -1;
+            } else {
+                fprintf(stderr, "%s: Unknown expression: %s\n",
+                    argv[0], argv[i]);
+                return -1;
+            }
+
             // for future
             switch(argv[i][1]) {
 
-                case 'c':
-                    flag_coherent++;
+                case 'c':       // coherence
+                    if (t <= 0)
+                        flag_coherence = 1;
+                    else
+                        flag_coherence = t;
                     break;
 
-                case 'f':
-                    flag_fast++;
+                case 'f':       // throughput
+                    if (t <= 0)
+                        flag_fast = 1;
+                    else
+                        flag_fast = t;
                     break;
 
-                case 's':
-                    flag_speed++;
+                case 'h':       // help to stdout
+                    printf("%s", brutus_usage);
+                    return 0;
+
+                case 'r':       // random seed
+                    if (t < 0)
+                        t = time(NULL) & 0x7FFFFFFF;
+                    srandom(t);
+                    if (brutus_verbose)
+                        printf("\tsrandom(%d)\n", t);
                     break;
 
-                case 'q':
-                    brutus_verbatim = 0;
+                case 's':       // speed
+                    if (t <= 0)
+                        flag_speed = 3;
+                    else
+                        flag_speed = t;
+                    break;
+
+                case 't':       // timeout
+                    if (t > 0)
+                        flag_timeout = t;
+                    else
+                        flag_timeout = 0;
+                    break;
+
+                case 'q':       // quiet
+                    brutus_verbose = 0;
+                    break;
+
+                case 'x':       // experiment
+                    if (t > 0)
+                        flag_xprmt = t;
+                    else
+                        flag_xprmt = 10;
                     break;
 
                 default:
@@ -73,6 +131,7 @@ int main(int argc, char **argv)
                         argv[0], argv[i]);
                 return -1;
             }
+
         } else {
 
             aead = &candidate[ciphers];
@@ -114,19 +173,41 @@ int main(int argc, char **argv)
         }
     }
 
-    // now run tests on all ciphers
-
-    if (flag_coherent) {
-        for (i = 0; i < ciphers; i++) {
-            test_coherent(&candidate[i]);
-            fflush(stdout);
-        }
+    // banner
+    if (brutus_verbose) {
+        printf("%s\n",
+            "BRUTUS ("__DATE__") by Markku-Juhani O. Saarinen <mjos@iki.fi>");
     }
-    if (flag_speed > 0 || flag_fast > 0) {
-        for (i = 0; i < ciphers; i++) {
-            test_speed(&candidate[i], flag_fast);
-            fflush(stdout);
+
+    // set the timeout
+    if (flag_timeout > 0) {
+        if (brutus_verbose) {
+            printf("\tGlobal timeout in %d secs.\n", flag_timeout);
         }
+        alarm(flag_timeout);
+    }
+
+    if (ciphers <= 0) {
+        fprintf(stderr, "%s: No ciphers specified.\n", argv[0]);
+        return 1;
+    }
+
+    // now run tests on all ciphers
+    for (i = 0; i < ciphers; i++) {
+        if (flag_coherence > 0)
+            test_coherence(&candidate[i], flag_coherence);
+        if (flag_speed > 0)
+            test_speed(&candidate[i], flag_speed);
+        if (flag_fast > 0)
+            test_throughput(&candidate[i], flag_fast);
+    }
+
+    // loop until timeout, if specified
+    while (flag_xprmt > 0) {
+        for (i = 0; i < ciphers; i++)
+            test_xprmnt(&candidate[i], flag_xprmt);
+        if (flag_timeout == 0)
+            break;
     }
 
     // free up the dynamic libraries
