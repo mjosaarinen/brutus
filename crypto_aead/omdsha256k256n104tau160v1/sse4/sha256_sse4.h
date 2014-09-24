@@ -1,6 +1,10 @@
 #ifndef SHA256_SSE4
 #define SHA256_SSE4
 
+#ifndef __SSE4__
+	FAIL NO SSE4
+#endif
+
 #if __APPLE__ && __MACH__
     DO NOT COMPILE
 #endif

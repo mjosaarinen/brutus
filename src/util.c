@@ -4,20 +4,40 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include <stdlib.h>
 #include <dlfcn.h>
 
 #include "brutus.h"
 
-// utilities
+// Deterministic sequences (Fibonacci generator)
 
-void rand_fill(void *p, int len)
+uint32_t detseq_a = 0, detseq_b = 1;
+
+void detseq_seed(uint32_t seed) 
 {
-    int i;
-
-    for (i = 0; i < len; i++)
-        ((uint8_t *) p)[i] = rand();
+	detseq_a = 0xDEAD4BAD * seed;		// prime
+	detseq_b = 1;
 }
+
+uint32_t detseq32() 
+{
+	uint32_t t;
+	
+	t = detseq_a + detseq_b;
+	detseq_a = detseq_b;
+	detseq_b = t;
+	
+	return t;
+}
+
+void detseq_fill(void *p, int len)
+{
+	int i;
+	
+	for (i = 0; i < len; i++) 
+		((uint8_t *) p)[i] = detseq32() >> 24;
+}
+
+// utilities
 
 void hex_dump(void *p, int len)
 {

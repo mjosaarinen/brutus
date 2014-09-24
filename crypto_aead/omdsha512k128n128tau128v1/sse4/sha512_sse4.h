@@ -5,6 +5,10 @@
     DO NOT COMPILE
 #endif
 
+#ifndef __SSE4__
+	FAIL NO SSE4
+#endif
+
 asm(".intel_syntax noprefix");
 #if __APPLE__ && __MACH__
 asm(".text \n\

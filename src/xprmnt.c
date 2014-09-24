@@ -59,7 +59,7 @@ int test_xprmnt(caesar_t *aead, int limit)
     steps = 0;
     stim = clock();
     do {
-        rand_fill(nx, aead->npubbytes);
+        detseq_fill(nx, aead->npubbytes);
         aead->encrypt(cx, &clen, v, 32 - aead->abytes, v, 0, v, nx, key);
 
         for (i = 0; i < inp_bits; i++) {

@@ -28,14 +28,17 @@ typedef struct {
 extern int brutus_verbose;
 
 // util.c prototypes
-void rand_fill(void *p, int len);
+void detseq_seed(uint32_t seed);
+uint32_t detseq32();
+void detseq_fill(void *p, int len);
 void hex_dump(void *p, int len);
 double plg2chi2(double chi2);
 
 // test modules
-int test_speed(caesar_t *aead, int timout);
-int test_throughput(caesar_t *aead, int timeout);
-int test_coherence(caesar_t *aead, int timeout);
-int test_xprmnt(caesar_t *aead, int timeout);
+int test_speed(caesar_t *aead, int limit);
+int test_throughput(caesar_t *aead, int limit);
+int test_coherence(caesar_t *aead, int limit);
+int test_kat(caesar_t *aead, int limit);
+int test_xprmnt(caesar_t *aead, int limit);
 
 #endif

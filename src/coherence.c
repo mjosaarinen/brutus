@@ -6,7 +6,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include <stdlib.h>
 #include <time.h>
 
 #include "brutus.h"
@@ -65,13 +64,13 @@ int test_coherence(caesar_t *aead, int limit)
             memset(osec, 0xF0, sizeof(osec));
 
             // randomize cryptovariables
-            rand_fill(key, aead->keybytes);
-            rand_fill(nsec, aead->nsecbytes);
-            rand_fill(npub, aead->npubbytes);
+            detseq_fill(key, aead->keybytes);
+            detseq_fill(nsec, aead->nsecbytes);
+            detseq_fill(npub, aead->npubbytes);
 
-            adlen = random() % (sizeof(ad) + 1);
-            rand_fill(ad, adlen);
-            rand_fill(pt, mlen);
+            adlen = detseq32() % (sizeof(ad) + 1);
+            detseq_fill(ad, adlen);
+            detseq_fill(pt, mlen);
 
             // encrypt
             clen = 0;
@@ -113,30 +112,30 @@ int test_coherence(caesar_t *aead, int limit)
             }
 
             // attempt random forgery
-            forge = rand() % 4;
-            bit = 0x02 << (random() % 7);
+            forge = detseq32() % 4;
+            bit = 0x02 << (detseq32() % 7);
             switch (forge) {
                 case 0:
-                    off = random() % aead->keybytes;
+                    off = detseq32() % aead->keybytes;
                     key[off] ^= bit;
                     break;
 
                 case 1:
                     if (aead->npubbytes == 0)
                         continue;
-                    off = random() % aead->npubbytes;
+                    off = detseq32() % aead->npubbytes;
                     npub[off] ^= bit;
                     break;
 
                 case 2:
                     if (adlen == 0)
                         continue;
-                    off = random() % adlen;
+                    off = detseq32() % adlen;
                     ad[off] ^= bit;
                     break;
 
                 case 3:
-                    off = random() % clen;
+                    off = detseq32() % clen;
                     ct[off] ^= bit;
                     break;
             }

@@ -1,6 +1,10 @@
 #ifndef SHA512_AVX1
 #define SHA512_AVX1
 
+#ifndef __AVX__
+	FAIL
+#endif
+
 #if __APPLE__ && __MACH__
     DO NOT COMPILE
 #endif

@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include <stdlib.h>
 #include <unistd.h>
+#include <stdlib.h>
 #include <dlfcn.h>
 #include <time.h>
 #include <ctype.h>
@@ -19,6 +19,7 @@ const char brutus_usage[] =
     "Usage: brutus [flags] aead1.so aead2.so ..\n"
     "  -h   Quick help\n"
     "  -q   Switch off verbose\n"
+    "  -kN  Generate KAT for max length N\n"
     "  -tN  Force exit after N seconds\n"
     "  -rN  Use random seed N\n"
     "  -cN  Coherence test (N sec timeout)\n"
@@ -33,7 +34,8 @@ int main(int argc, char **argv)
     int t, i, *ipt, ciphers;
     char *str;
     caesar_t *aead, *candidate;
-    int flag_coherence, flag_speed, flag_fast, flag_xprmt, flag_timeout;
+    int flag_coherence, flag_speed, flag_fast, flag_xprmt, 
+    	flag_kat, flag_timeout;
 
     // test modes
     brutus_verbose = 1;
@@ -41,6 +43,7 @@ int main(int argc, char **argv)
     flag_speed = 0;
     flag_fast = 0;
     flag_xprmt = 0;
+    flag_kat = 0;
     flag_timeout = 0;
 
     // no paramets
@@ -93,12 +96,19 @@ int main(int argc, char **argv)
                     printf("%s", brutus_usage);
                     return 0;
 
+				case 'k':		// known answer tests
+                    if (t <= 0)
+                        flag_kat = 100;
+                    else
+                        flag_kat = t;
+                    break;
+                    
                 case 'r':       // random seed
                     if (t < 0)
                         t = time(NULL) & 0x7FFFFFFF;
-                    srandom(t);
+                    detseq_seed(t);
                     if (brutus_verbose)
-                        printf("\tsrandom(%d)\n", t);
+                        printf("\tdetseq_seed(%d)\n", t);
                     break;
 
                 case 's':       // speed
@@ -200,6 +210,9 @@ int main(int argc, char **argv)
             test_speed(&candidate[i], flag_speed);
         if (flag_fast > 0)
             test_throughput(&candidate[i], flag_fast);
+        if (flag_kat > 0)
+            test_kat(&candidate[i], flag_kat);
+        fflush(stdout);
     }
 
     // loop until timeout, if specified

@@ -31,11 +31,11 @@ int run_speed(caesar_t *aead,
     limit *= CLOCKS_PER_SEC;
 
     // random fill contents
-    rand_fill(pt, mlen);
-    rand_fill(ad, adlen);
-    rand_fill(key, aead->keybytes);
-    rand_fill(nsec, aead->nsecbytes);
-    rand_fill(npub, aead->npubbytes);
+    detseq_fill(pt, mlen);
+    detseq_fill(ad, adlen);
+    detseq_fill(key, aead->keybytes);
+    detseq_fill(nsec, aead->nsecbytes);
+    detseq_fill(npub, aead->npubbytes);
 
     encspeed = 0.0;
     decspeed = 0.0;
@@ -112,7 +112,7 @@ int test_speed(caesar_t *aead, int limit)
 int test_throughput(caesar_t *aead, int limit)
 {
     if (brutus_verbose) {
-        printf("[%s] Throughput (limit=%ds sec)  "
+        printf("[%s] Throughput (limit=%d sec)  "
             "key=%d  nsec=%d  npub=%d a=%d\n",
             aead->name, limit, aead->keybytes, aead->nsecbytes,
             aead->npubbytes, aead->abytes);
