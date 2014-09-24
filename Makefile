@@ -6,6 +6,7 @@ BIN		= brutus
 OBJS		= src/main.o src/util.o \
 		src/speed.o \
 		src/coherence.o \
+		src/kat.o \
 		src/xprmnt.o
 
 CC		= $(shell cat brutus_cc.cfg)
