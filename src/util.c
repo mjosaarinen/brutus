@@ -4,7 +4,10 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#include <dlfcn.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 
 #include "brutus.h"
 
@@ -67,6 +70,33 @@ void hex_dump(void *p, int len)
         }
         printf("|\n");
     }
+}
+
+// forking test harness (against cipher crashes & memory leaks)
+
+int harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val)
+{
+	pid_t p;
+	int stat;
+
+	p = fork();
+	if (p == 0) {
+		exit(test_func(aead, val));
+	}
+	waitpid(p, &stat, 0);
+	fflush(stdout);
+
+	// normal exit ?
+	if (WIFEXITED(stat))
+		return WEXITSTATUS(stat);
+
+	// something weird happened
+	if (WIFSIGNALED(stat))
+		fprintf(stderr, "\n[SIGNAL %d]\n", WTERMSIG(stat));
+	else
+		fprintf(stderr, "\n[UNKNOWN]\n");
+
+	return -13;
 }
 
 // P value estimate from Chi2, DF=1

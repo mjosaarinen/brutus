@@ -6,6 +6,9 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <signal.h>
 #include <dlfcn.h>
 #include <time.h>
 #include <ctype.h>
@@ -27,6 +30,16 @@ const char brutus_usage[] =
     "  -fN  Fast throughput test (N secs for enc/dec)\n";
 //  "  -xN  Correlation experiment with param N.\n";
 
+
+// alarm kills all child processes in process group too
+
+void timeout_kill(int sig)
+{
+	fflush(stdout);
+	fprintf(stderr, "\n[SCHEDULED TIMEOUT]\n");
+	kill(-getpgrp(), SIGKILL);
+}
+
 // main
 
 int main(int argc, char **argv)
@@ -36,6 +49,7 @@ int main(int argc, char **argv)
     caesar_t *aead, *candidate;
     int flag_coherence, flag_speed, flag_fast, flag_xprmt, 
     	flag_kat, flag_timeout;
+	struct sigaction sa;
 
     // test modes
     brutus_verbose = 1;
@@ -189,36 +203,43 @@ int main(int argc, char **argv)
             "BRUTUS ("__DATE__") by Markku-Juhani O. Saarinen <mjos@iki.fi>");
     }
 
-    // set the timeout
-    if (flag_timeout > 0) {
-        if (brutus_verbose) {
-            printf("\tGlobal timeout in %d secs.\n", flag_timeout);
-        }
-        alarm(flag_timeout);
-    }
-
     if (ciphers <= 0) {
         fprintf(stderr, "%s: No ciphers specified.\n", argv[0]);
         return 1;
     }
 
-    // now run tests on all ciphers
+    // set the timeout
+    if (flag_timeout > 0) {
+        if (brutus_verbose) {
+            printf("\tGlobal timeout in %d secs.\n", flag_timeout);
+        }
+
+		memset(&sa, 0, sizeof(sa));
+		sigemptyset(&sa.sa_mask);
+		sa.sa_handler = timeout_kill;
+		sa.sa_flags = 0;
+		if (sigaction(SIGALRM, &sa, NULL) != 0)
+			perror("sigaction()");
+
+        alarm(flag_timeout);
+    }
+
+    // run tests on all ciphers
     for (i = 0; i < ciphers; i++) {
         if (flag_coherence > 0)
-            test_coherence(&candidate[i], flag_coherence);
+            harness(test_coherence, &candidate[i], flag_coherence);
         if (flag_speed > 0)
-            test_speed(&candidate[i], flag_speed);
+            harness(test_speed, &candidate[i], flag_speed);
         if (flag_fast > 0)
-            test_throughput(&candidate[i], flag_fast);
+            harness(test_throughput, &candidate[i], flag_fast);
         if (flag_kat > 0)
-            test_kat(&candidate[i], flag_kat);
-        fflush(stdout);
+            harness(test_kat, &candidate[i], flag_kat);
     }
 
     // loop until timeout, if specified
     while (flag_xprmt > 0) {
         for (i = 0; i < ciphers; i++)
-            test_xprmnt(&candidate[i], flag_xprmt);
+            harness(test_xprmnt, &candidate[i], flag_xprmt);
         if (flag_timeout == 0)
             break;
     }
