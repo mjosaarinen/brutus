@@ -12,8 +12,7 @@ rm -rf $AEADLIBS aeadlibs.txt
 mkdir $AEADLIBS
 
 ls -1d $CRYPTO_AEAD/*/* | {
-	read srcdir
-	while [ "srcdir" != "" ]
+	while read srcdir
 	do
 		aead=`echo $srcdir | sed 's@'$CRYPTO_AEAD'/@@g' | tr '/' '-'`
 		echo == $aead == 
@@ -32,7 +31,6 @@ ls -1d $CRYPTO_AEAD/*/* | {
 			wc $AEADLIBS/$aead.err
 		fi
 		echo
-		read srcdir
 	done } | tee mkaeadlibs.log
 
 # create the list
