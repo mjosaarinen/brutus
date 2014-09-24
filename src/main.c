@@ -201,6 +201,7 @@ int main(int argc, char **argv)
     if (brutus_verbose) {
         printf("%s\n",
             "BRUTUS ("__DATE__") by Markku-Juhani O. Saarinen <mjos@iki.fi>");
+		fflush(stdout);
     }
 
     if (ciphers <= 0) {
@@ -212,6 +213,7 @@ int main(int argc, char **argv)
     if (flag_timeout > 0) {
         if (brutus_verbose) {
             printf("\tGlobal timeout in %d secs.\n", flag_timeout);
+			fflush(stdout);
         }
 
         memset(&sa, 0, sizeof(sa));
