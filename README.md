@@ -61,10 +61,15 @@ subdirectory. The compiler output of each library is in `*.err` and `*.so` is
 the shared library (if it exists). For example:
 
 ```
-$ ls aeadlibs/stribob192r1-*
-aeadlibs/stribob192r1-8bit.err  aeadlibs/stribob192r1-ref.so
-aeadlibs/stribob192r1-8bit.so   aeadlibs/stribob192r1-xmm.err
-aeadlibs/stribob192r1-ref.err   aeadlibs/stribob192r1-xmm.so
+$ ls aeadlibs/stribob192*
+aeadlibs/stribob192r1-8bit.err    aeadlibs/stribob192r2d2-bitslice.err
+aeadlibs/stribob192r1-8bit.so     aeadlibs/stribob192r2d2-bitslice.so
+aeadlibs/stribob192r1-ref.err     aeadlibs/stribob192r2d2-neon.err
+aeadlibs/stribob192r1-ref.so      aeadlibs/stribob192r2d2-ref.err
+aeadlibs/stribob192r1-xmm.err     aeadlibs/stribob192r2d2-ref.so
+aeadlibs/stribob192r1-xmm.so      aeadlibs/stribob192r2d2-ssse3.err
+aeadlibs/stribob192r2d2-8bit.err  aeadlibs/stribob192r2d2-ssse3.so
+aeadlibs/stribob192r2d2-8bit.so
 ```
 We also have the `brutus` executable binary:
 
@@ -86,22 +91,22 @@ all numbers "N" are optional; there are defaults.
 $ ./brutus -c2 -f aeadlibs/*keyakv1-*.so
 
 BRUTUS (Sep 24 2014) by Markku-Juhani O. Saarinen <mjos@iki.fi>
-[lakekeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
-[lakekeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
-[lakekeyakv1-ref] 43872.97 kB/s  encrypt(mlen=65536 adlen=0) 
-[lakekeyakv1-ref] 43843.24 kB/s  decrypt(mlen=65536 adlen=0)
-[oceankeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
-[oceankeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
-[oceankeyakv1-ref] 43218.39 kB/s  encrypt(mlen=65536 adlen=0) 
-[oceankeyakv1-ref] 43144.13 kB/s  decrypt(mlen=65536 adlen=0) 
-[riverkeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
-[riverkeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
-[riverkeyakv1-ref] 18940.55 kB/s  encrypt(mlen=65536 adlen=0) 
-[riverkeyakv1-ref] 18927.97 kB/s  decrypt(mlen=65536 adlen=0) 
-[seakeyakv1-ref] Coherence Check (limit=2)  key=16  nsec=0  npub=16  a=16
-[seakeyakv1-ref] Throughput (limit=1s)  key=16  nsec=0  npub=16 a=16
-[seakeyakv1-ref] 43575.46 kB/s  encrypt(mlen=65536 adlen=0) 
-[seakeyakv1-ref] 43470.38 kB/s  decrypt(mlen=65536 adlen=0)
+[lakekeyakv1-ref] Coherence Check (limit=2 sec)  key=16  nsec=0  npub=16  a=16
+[lakekeyakv1-ref] Throughput (limit=1 sec)  key=16  nsec=0  npub=16 a=16
+[lakekeyakv1-ref] 43788.04 kB/s  encrypt(mlen=65536 adlen=0)
+[lakekeyakv1-ref] 43811.63 kB/s  decrypt(mlen=65536 adlen=0)
+[oceankeyakv1-ref] Coherence Check (limit=2 sec)  key=16  nsec=0  npub=16  a=16
+[oceankeyakv1-ref] Throughput (limit=1 sec)  key=16  nsec=0  npub=16 a=16
+[oceankeyakv1-ref] 43156.03 kB/s  encrypt(mlen=65536 adlen=0)
+[oceankeyakv1-ref] 43047.13 kB/s  decrypt(mlen=65536 adlen=0)
+[riverkeyakv1-ref] Coherence Check (limit=2 sec)  key=16  nsec=0  npub=16  a=16
+[riverkeyakv1-ref] Throughput (limit=1 sec)  key=16  nsec=0  npub=16 a=16
+[riverkeyakv1-ref] 18984.20 kB/s  encrypt(mlen=65536 adlen=0)
+[riverkeyakv1-ref] 18877.08 kB/s  decrypt(mlen=65536 adlen=0)
+[seakeyakv1-ref] Coherence Check (limit=2 sec)  key=16  nsec=0  npub=16  a=16
+[seakeyakv1-ref] Throughput (limit=1 sec)  key=16  nsec=0  npub=16 a=16
+[seakeyakv1-ref] 42998.03 kB/s  encrypt(mlen=65536 adlen=0)
+[seakeyakv1-ref] 43321.04 kB/s  decrypt(mlen=65536 adlen=0
 ```
 The output should be mostly self-explanatory.
 
