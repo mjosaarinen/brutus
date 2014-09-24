@@ -67,7 +67,6 @@ int run_speed(caesar_t *aead,
         aead->name, encspeed / 1000.0, mlen, adlen);
 
     stim = clock();
-
     bytes = 0;
 	sta = 1;
 	stb = 1;
