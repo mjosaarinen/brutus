@@ -1,4 +1,2 @@
-#pragma GCC diagnostic error \
-	"Implementation does not even attempt to free EVP contexts and will crash."
-FAIL
-
+#pragma message "Implementation does not free EVP contexts and will crash."
+FAIL COMPILATION
