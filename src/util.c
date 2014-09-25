@@ -40,7 +40,7 @@ void detseq_fill(void *p, int len)
         ((uint8_t *) p)[i] = detseq32() >> 24;
 }
 
-// utilities
+// Hex Dump
 
 void hex_dump(void *p, int len)
 {
@@ -72,7 +72,7 @@ void hex_dump(void *p, int len)
     }
 }
 
-// forking test harness (against cipher crashes & memory leaks)
+// a forking test harness (against cipher crashes & memory leaks)
 
 int test_harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val)
 {
@@ -92,11 +92,11 @@ int test_harness(int (*test_func)(caesar_t *, int), caesar_t *aead, int val)
 
     // something weird happened
     if (WIFSIGNALED(stat))
-        fprintf(stderr, "\n[SIGNAL %d]\n", WTERMSIG(stat));
+        printf("\n[SIGNAL %d]\n", WTERMSIG(stat));
     else
-        fprintf(stderr, "\n[UNKNOWN]\n");
+        printf("\n[TERMINATED]\n");
 
-    return -13;
+    return -1;
 }
 
 // P value estimate from Chi2, DF=1

@@ -35,8 +35,8 @@ const char brutus_usage[] =
 
 void timeout_kill(int sig)
 {
+   	printf("\n[SCHEDULED TIMEOUT]\n");
     fflush(stdout);
-    fprintf(stderr, "\n[SCHEDULED TIMEOUT]\n");
     kill(-getpgrp(), SIGKILL);
 }
 
