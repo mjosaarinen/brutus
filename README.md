@@ -14,7 +14,7 @@ implementations (you guys really should not do ANY security work),
 the reference ciphers are now included with the BRUTUS package.
 
 The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
-testing cycle. You can compile and run basic tests on nearly 200 candidate 
+testing cycle. You can compile and run basic tests on over 200 candidate 
 variants in just few minutes (about 95% currently runnable). You can also 
 easily add your own test code into the framework.
 
