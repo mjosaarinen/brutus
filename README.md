@@ -7,7 +7,7 @@ BRUTUS is an alternative testing framework for [CAESAR ciphers](http://competiti
 Individual ciphers are compiled into shared libraries. A testing `main()` 
 program then loads only those ciphers that you want to run on a particular 
 test on. BRUTUS runs on most modern Linux systems, including better-equipped
-embedded systems. The codebase is fairly small, about 1000 lines total.
+embedded systems. The codebase is fairly small and easily modifiable.
 
 After fixing a bunch of memory leaks and other horrendous bugs in the
 implementations (you guys really should not do ANY security work),
@@ -16,8 +16,7 @@ the reference ciphers are now included with the BRUTUS package.
 The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
 testing cycle. You can compile and run basic tests on nearly 200 candidate 
 variants in just few minutes (about 95% currently runnable). You can also 
-easily add your own statistical tests or test vector generation/verification 
-code into the framework.
+easily add your own test code into the framework.
 
 No warranty whatsoever. If you use this code in your project, attribute me.
 
