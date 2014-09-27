@@ -42,7 +42,7 @@ $ git clone https://github.com/mjosaarinen/brutus.git
 or
 
 ```
-$ wget http://mjos.fi/dist/brutus-current.txz
+$ wget https://mjos.fi/dist/brutus-current.txz
 $ tar xfvJ brutus-current.txz
 ```
 Now check the compiler flags in `brutus_cc.cfg`. If you have an old compiler 
