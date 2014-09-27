@@ -31,7 +31,7 @@ some candidates utilize AES. On debian/ubuntu:
 ```
 $ sudo apt-get install libssl-dev
 ```
-Choose a working directory and cd there. Extract the Brutus package.
+Choose a working directory and cd there. Extract the Brutus package:
 ```
 $ git clone https://github.com/mjosaarinen/brutus.git
 ```
