@@ -33,6 +33,11 @@ $ sudo apt-get install libssl-dev
 ```
 Choose a working directory and cd there. Extract the Brutus package.
 ```
+$ git clone https://github.com/mjosaarinen/brutus.git
+```
+or
+
+```
 $ wget http://mjos.fi/dist/brutus-current.txz
 $ tar xfvJ brutus-current.txz
 ```
