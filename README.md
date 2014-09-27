@@ -9,16 +9,20 @@ program then loads only those ciphers that you want to run on a particular
 test on. BRUTUS runs on most modern Linux systems, including better-equipped
 embedded systems. The codebase is fairly small and easily modifiable.
 
-After fixing a bunch of memory leaks and other horrendous bugs in the
-implementations (you guys really should not do ANY security work),
-the reference ciphers are now included with the BRUTUS package.
-
 The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
 testing cycle. You can compile and run basic tests on over 200 candidate 
 variants in just few minutes (about 95% currently runnable). You can also 
 easily add your own test code into the framework.
 
-No warranty whatsoever. If you use this code in your project, attribute me.
+After fixing a bunch of memory leaks and other horrendous bugs in the
+implementations (you guys really should NOT do ANY security work),
+the reference ciphers are now included with the BRUTUS package.
+Many obvious bugs still remain but I haven't touched implementation errors
+that don't threaten the stability of the testing framework. It's your
+shame if you can't even code.
+
+No warranty whatsoever. I don't own the cipher implementations.
+If you my code in your project, attribute me.
 
 Cheers,
 - Markku http://www.mjos.fi.
