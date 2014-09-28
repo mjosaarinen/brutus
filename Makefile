@@ -31,5 +31,6 @@ clean:
 
 dist:		clean		
 		cd ..; tar cfvJ $(DIST)/$(DIST)-current.txz $(DIST)/*
-#		cd ..; tar cfvJ $(DIST)/$(DIST)-`date -u "+%Y%m%d%H%M00"`.txz \
-#			$(DIST)/*
+
+sig:		dist
+		gpg -u mjos -b $(DIST)-current.txz
