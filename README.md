@@ -19,10 +19,10 @@ implementations (you guys really should NOT do ANY security work),
 the reference ciphers are now included with the BRUTUS package.
 Many obvious bugs still remain but I haven't touched implementation errors
 that don't threaten the stability of the testing framework. It's your
-shame if you can't even code.
+shame if you can't code.  
 
 No warranty whatsoever. I don't own the cipher implementations.
-If you my code in your project, attribute me.
+If you use my code in your project, attribute me.
 
 Cheers,
 - Markku http://www.mjos.fi.
