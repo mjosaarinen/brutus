@@ -191,6 +191,11 @@ int main(int argc, char **argv)
                 if (aead->encrypt != NULL && aead->decrypt != NULL) {
                     ciphers++;
                 } else {
+                   	str = dlerror();
+                	if (str != NULL)
+                		fprintf(stderr, "Failed %s\n", str);
+					else
+	                	fprintf(stderr, "Failed %s\n", argv[i]);
                     dlclose(aead->dlib);
                 }
             }
