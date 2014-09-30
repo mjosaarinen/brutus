@@ -68,7 +68,7 @@ int test_coherence(caesar_t *aead, int limit)
             detseq_fill(nsec, aead->nsecbytes);
             detseq_fill(npub, aead->npubbytes);
 
-	    	adlen = detseq32() % (sizeof(ad) + 1);
+            adlen = detseq32() % (sizeof(ad) + 1);
             detseq_fill(ad, adlen);
             detseq_fill(pt, mlen);
 
@@ -149,7 +149,7 @@ int test_coherence(caesar_t *aead, int limit)
                 if (brutus_verbose) {
                     printf("!FORGE\t%s %s[%d] ^= 0x%02X "
                         "(iter=%d mlen=%llu adlen=%llu clen=%llu)\n",
-                        aead->name, fcase[forge], off, bit, 
+                        aead->name, fcase[forge], off, bit,
                         iter, mlen, adlen, clen);
                 }
                 forge_ok++;
