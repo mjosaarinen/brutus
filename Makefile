@@ -26,11 +26,11 @@ $(BIN):		$(OBJS)
 		$(CC) $(INCS) -c $< -o $@
 
 clean:
-		rm -rf $(DIST)-*.txz $(DIST)-*.txz.sig $(OBJS) $(BIN) \
+		rm -rf $(DIST)-*.txz $(DIST)-*.txz.asc $(OBJS) $(BIN) \
 			aeadlibs aeadlibs.txt mkaeadlibs.log
 
 dist:		clean		
 		cd ..; tar cfvJ $(DIST)/$(DIST)-current.txz $(DIST)/*
 
 sig:		dist
-		gpg -u mjos -b $(DIST)-current.txz
+		gpg -a -b $(DIST)-current.txz
