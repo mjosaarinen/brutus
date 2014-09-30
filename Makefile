@@ -26,7 +26,7 @@ $(BIN):		$(OBJS)
 		$(CC) $(INCS) -c $< -o $@
 
 clean:
-		rm -rf $(DIST)-*.txz $(OBJS) $(BIN) \
+		rm -rf $(DIST)-*.txz $(DIST)-*.txz.sig $(OBJS) $(BIN) \
 			aeadlibs aeadlibs.txt mkaeadlibs.log
 
 dist:		clean		
