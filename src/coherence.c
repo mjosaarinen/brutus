@@ -68,7 +68,7 @@ int test_coherence(caesar_t *aead, int limit)
             detseq_fill(nsec, aead->nsecbytes);
             detseq_fill(npub, aead->npubbytes);
 
-            adlen = detseq32() % (sizeof(ad) + 1);
+	    	adlen = detseq32() % (sizeof(ad) + 1);
             detseq_fill(ad, adlen);
             detseq_fill(pt, mlen);
 
@@ -93,27 +93,30 @@ int test_coherence(caesar_t *aead, int limit)
             // check that the plaintext matches
             if (t != mlen) {
                 fprintf(stderr,
-                    "!FAIL\t%s decrypt length=%llu mlen=%llu clen=%llu)\n",
-                aead->name, t, mlen, clen);
+                    "!FAIL\t%s decrypt length=%llu "
+                    "mlen=%llu adlen=%llu clen=%llu)\n",
+                aead->name, t, mlen, adlen, clen);
                 return -3;
             }
             if (memcmp(pt, xt, mlen) != 0) {
                 fprintf(stderr,
-                    "!FAIL\t%s decrypt mismatch (mlen=%llu clen=%llu\n)",
-                    aead->name, mlen, clen);
+                    "!FAIL\t%s decrypt mismatch "
+                    "(mlen=%llu adlen=%llu clen=%llu\n)",
+                    aead->name, mlen, adlen, clen);
                 return -4;
             }
             if (aead->nsecbytes > 0 &&
                 memcmp(nsec, osec, aead->nsecbytes) != 0) {
                 fprintf(stderr,
-                    "!FAIL\t%s nsec mismatch (mlen=%llu clen=%llu\n)",
-                    aead->name, mlen, clen);
+                    "!FAIL\t%s nsec mismatch "
+                    "(mlen=%llu adlen=%llu clen=%llu\n)",
+                    aead->name, mlen, adlen, clen);
                 return -5;
             }
 
             // attempt random forgery
             forge = detseq32() % 4;
-            bit = 0x02 << (detseq32() % 7);
+            bit = 0x01 << (detseq32() % 8);
             switch (forge) {
                 case 0:
                     off = detseq32() % aead->keybytes;
@@ -145,8 +148,9 @@ int test_coherence(caesar_t *aead, int limit)
             if (ret == 0) {
                 if (brutus_verbose) {
                     printf("!FORGE\t%s %s[%d] ^= 0x%02X "
-                        "(iter=%d mlen=%llu clen=%llu)\n",
-                        aead->name, fcase[forge], off, bit, iter, mlen, clen);
+                        "(iter=%d mlen=%llu adlen=%llu clen=%llu)\n",
+                        aead->name, fcase[forge], off, bit, 
+                        iter, mlen, adlen, clen);
                 }
                 forge_ok++;
             }
