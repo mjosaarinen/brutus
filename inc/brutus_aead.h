@@ -7,6 +7,20 @@
 #include <stdint.h>
 #endif
 
+// (primates and paeq have c functions in cpp files)
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// PAEQ is broken like this
+#ifndef CRYPTO_encrypt
+#define CRYPTO_encrypt crypto_aead_encrypt
+#endif
+
+#ifndef CRYPTO_decrypt
+#define CRYPTO_decrypt crypto_aead_decrypt
+#endif
+
 #ifndef BRUTUS_CRYPTO_AEAD_H
 #define BRUTUS_CRYPTO_AEAD_H
 int crypto_aead_encrypt(unsigned char *c, unsigned long long *clen,
@@ -45,3 +59,6 @@ void crypto_core_aes128decrypt(void *out, void *in, void *k, int flag);
 void crypto_core_aes256decrypt(void *out, void *in, void *k, int flag);
 #endif
 
+#ifdef __cplusplus
+}
+#endif
