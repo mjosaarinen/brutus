@@ -1,5 +1,9 @@
 #! /bin/bash
 
+# genhtml.sh
+# 01-Oct-14  Markku-Juhani O. Saarinen <mjos@iki.fi>
+# called by genindex.sh. requires imagemagick to convert pgm -> png
+
 echo "<!DOCTYPE HTML>"
 echo "<html>"
 echo "<head>"
