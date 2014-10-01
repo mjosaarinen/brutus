@@ -81,9 +81,9 @@ int test_kat(caesar_t *aead, int limit)
             aead->name, limit, aead->keybytes, aead->nsecbytes,
             aead->npubbytes, aead->abytes);
     }
-    if (limit > 0x10000) {
-        fprintf(stderr, "Limit %d too high. Increse KAT_LIMIT (%d).\n",
-            limit, KAT_LIMIT);
+    if (limit > KAT_LIMIT) {
+        fprintf(stderr, "Limit too high. Increse KAT_LIMIT macro (%d).\n",
+            KAT_LIMIT);
         return -1;
     }
 

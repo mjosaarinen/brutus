@@ -28,7 +28,7 @@ const char brutus_usage[] =
     "  -cN  Coherence test (N sec timeout)\n"
     "  -sN  Encryption/Authentication Speed (N secs each)\n"
     "  -fN  Fast throughput test (N secs for enc/dec)\n";
-//  "  -xN  Correlation experiment with param N.\n";
+//  "  -xN  Experimental -- parameter N.\n";
 
 
 // alarm kills all child processes in process group too
@@ -147,7 +147,7 @@ int main(int argc, char **argv)
                     if (t > 0)
                         flag_xprmt = t;
                     else
-                        flag_xprmt = 10;
+                        flag_xprmt = 1;
                     break;
 
                 default:
