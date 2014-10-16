@@ -16,7 +16,7 @@ easily add your own test code into the framework.
 
 After fixing a bunch of memory leaks and other horrendous bugs in the
 implementations (despite academic credentials, some of you guys really 
-wouldn't be able to hold an entry-level dev job in a real security company),
+wouldn't be able to hold an entry-level job in a real security company),
 the reference ciphers are now included with the BRUTUS package.
 Many obvious bugs still remain but I haven't touched implementation errors
 that don't threaten the stability of the testing framework. It's your
