@@ -26,7 +26,7 @@ No warranty whatsoever. I don't own the cipher implementations.
 If you use my code in your project, attribute me.
 
 Cheers,
-- Markku http://www.mjos.fi.
+- Markku https://mjos.fi.
 
 #Short Tutorial
 
