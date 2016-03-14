@@ -28,10 +28,13 @@ If you use my code in your project, attribute me.
 **ADDENUM 14-Mar-16**
 
 The first round BRUTUS report has been published in Journal Of Cryptographic 
-Engineering,see the paper [The BRUTUS automatic cryptanalytic framework:
-Testing CAESAR authenticated encryption candidates for weaknesses] (http://link.springer.com/article/10.1007%2Fs13389-015-0114-1).
-We are still (more than six months after we submission) 
-waiting for the second round implementations to be made available.
+Engineering. The paper [The BRUTUS automatic cryptanalytic framework:
+Testing CAESAR authenticated encryption candidates for weaknesses] (http://link.springer.com/article/10.1007%2Fs13389-015-0114-1) is freely
+downloadable.
+
+We are still (more than six months after their submission) 
+waiting for the second round implementations to be made available so
+that they can be included in BRUTUS.
 Currently only the 2nd round implementation of our own cipher, WHIRLBOB, is 
 in included in the distrubtion. First round implementations are included in 
 the `crypto_aead_round1` directory for reference. You may
