@@ -9,6 +9,19 @@ program then loads only those ciphers that you want to run on a particular
 test on. BRUTUS runs on most modern Linux systems, including better-equipped
 embedded systems. The codebase is fairly small and easily modifiable.
 
+**ADDENUM 14-Mar-16**
+
+The first round BRUTUS report has been published in Journal Of Cryptographic 
+Engineering,see the paper [The BRUTUS automatic cryptanalytic framework:
+Testing CAESAR authenticated encryption candidates for weaknesses] (http://link.springer.com/article/10.1007%2Fs13389-015-0114-1).
+We are still (more than six months after we submission) 
+waiting for the second round implementations to be made available.
+Currently only the 2nd round implementation of our own cipher, WHIRLBOB, is 
+in included in the distrubtion. First round implementations are included in 
+the `crypto_aead_round1` directory for reference. You may
+move these to `crypto_aead` directory if you want to play with them
+using the automated scripts.
+
 The main advantage of BRUTUS over SUPERCOP is that it allows a rapid
 testing cycle. You can compile and run basic tests on over 200 candidate 
 variants in just few minutes (about 95% currently runnable). You can also 
